@@ -72,7 +72,6 @@ class MyApp extends StatelessWidget {
                   const CircleAvatar(
                     radius: 80,
                     backgroundImage: AssetImage('images/profile-img.jpeg'),
-                    
                   ),
                   const Text(
                     'Drako Rexon',
