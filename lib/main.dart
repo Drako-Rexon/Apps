@@ -31,16 +31,16 @@ class MyAppBar extends StatelessWidget {
           Expanded(
             child: title,
           ),
-          const IconButton(
-            icon: Icon(Icons.logout),
-            tooltip: 'Extra',
-            onPressed: null,
-          ),
-          const IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: null,
-          ),
+          // const IconButton(
+          //   icon: Icon(Icons.logout),
+          //   tooltip: 'Extra',
+          //   onPressed: null,
+          // ),
+          // const IconButton(
+          //   icon: Icon(Icons.search),
+          //   tooltip: 'Search',
+          //   onPressed: null,
+          // ),
         ],
       ),
     );
@@ -53,24 +53,47 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Intro App',
       home: Scaffold(
         backgroundColor: Colors.blue.shade100,
+        appBar: AppBar(
+          leading: const IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation Menu',
+            onPressed: null,
+          ),
+          title: const Text(
+            'Introduction APP',
+            // color: Colors.white,
+          ),
+          actions: const [
+            IconButton(
+              onPressed: null,
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+            )
+          ],
+        ),
         body: Container(
           child: Column(
             children: [
-              MyAppBar(
-                title: Text(
-                  'Introduction APP',
-                  style: Theme.of(context) //
-                      .primaryTextTheme
-                      .headline6,
-                ),
-              ),
+              // MyAppBar(
+              //   title: Text(
+              //     'Introduction APP',
+              //     style: Theme.of(context)
+              //         .primaryTextTheme
+              //         .headline6,
+              //   ),
+              // ),
+
               Column(
+                // Wants to give margin between the app bar and the circle avatar
+                // margin: EdgeInsets.symmetric(vertical: 90),
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const CircleAvatar(
                     radius: 80,
+                    // tooltip: 'Drako',
                     backgroundImage: AssetImage('images/profile-img.jpeg'),
                   ),
                   const Text(
@@ -91,7 +114,7 @@ class MyApp extends StatelessWidget {
                   const Card(
                     color: Colors.white,
                     margin: EdgeInsets.symmetric(
-                      vertical: 20,
+                      vertical: 30,
                       horizontal: 60,
                     ),
                     child: ListTile(
@@ -111,7 +134,7 @@ class MyApp extends StatelessWidget {
                   Card(
                     color: Colors.white,
                     margin: const EdgeInsets.symmetric(
-                      vertical: 60,
+                      vertical: 40,
                       horizontal: 60,
                     ),
                     child: ListTile(
@@ -127,7 +150,7 @@ class MyApp extends StatelessWidget {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
