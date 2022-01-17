@@ -4,6 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
+/*
 class MyAppBar extends StatelessWidget {
   const MyAppBar({required this.title, Key? key}) : super(key: key);
 
@@ -46,7 +47,7 @@ class MyAppBar extends StatelessWidget {
     );
   }
 }
-
+*/
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -123,7 +124,7 @@ class MyApp extends StatelessWidget {
                         color: Colors.indigo,
                       ),
                       title: Text(
-                        '+91 93X XXXX X84',
+                        "+91 93X XXXX X84",
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 20,
@@ -154,6 +155,15 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ],
+          ),
+        ),
+        floatingActionButton: const FloatingActionButton(
+          // onPressed: null,
+          backgroundColor: Colors.amber,
+          tooltip: 'Add',
+          onPressed: null,
+          child: Icon(
+            Icons.add,
           ),
         ),
       ),
