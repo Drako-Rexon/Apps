@@ -70,12 +70,25 @@ class MyApp extends StatelessWidget {
           actions: const [
             IconButton(
               onPressed: null,
-              icon: Icon(Icons.search),
-              tooltip: 'Search',
-            )
+              icon: Icon(Icons.get_app),
+              tooltip: 'Download',
+            ),
+            IconButton(
+              onPressed: null,
+              icon: Icon(Icons.code),
+              tooltip: 'Coder',
+            ),
+            IconButton(
+              onPressed: null,
+              icon: Icon(Icons.exit_to_app),
+              tooltip: 'Exit',
+            ),
           ],
         ),
         body: Container(
+          margin: const EdgeInsets.symmetric(
+            vertical: 130,
+          ),
           child: Column(
             children: [
               // MyAppBar(
@@ -159,12 +172,12 @@ class MyApp extends StatelessWidget {
         ),
         floatingActionButton: const FloatingActionButton(
           // onPressed: null,
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.amber,
           tooltip: 'Add',
           onPressed: null,
           child: Icon(
             Icons.add,
-            color: Colors.grey,
+            color: Colors.white,
           ),
         ),
       ),
