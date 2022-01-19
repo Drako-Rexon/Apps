@@ -48,6 +48,7 @@ class MyAppBar extends StatelessWidget {
   }
 }
 */
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -87,7 +88,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Container(
           margin: const EdgeInsets.symmetric(
-            vertical: 130,
+            vertical: 65,
           ),
           child: Column(
             children: [
