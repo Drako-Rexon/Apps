@@ -111,12 +111,17 @@ class MyApp extends StatelessWidget {
                     // tooltip: 'Drako',
                     backgroundImage: AssetImage('images/profile-img.jpeg'),
                   ),
-                  const Text(
-                    'Drako Rexon',
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      top: 20,
+                    ),
+                    child: Text(
+                      'Drako Rexon',
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   Text(
@@ -128,9 +133,11 @@ class MyApp extends StatelessWidget {
                   ),
                   const Card(
                     color: Colors.white,
-                    margin: EdgeInsets.symmetric(
-                      vertical: 30,
-                      horizontal: 60,
+                    margin: EdgeInsets.only(
+                      top: 25,
+                      bottom: 10,
+                      left: 50,
+                      right: 50,
                     ),
                     child: ListTile(
                       leading: Icon(
@@ -139,18 +146,21 @@ class MyApp extends StatelessWidget {
                       ),
                       title: Text(
                         "+91 93X XXXX X84",
+                        maxLines: 1,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 24,
                         ),
                       ),
                     ),
                   ),
                   Card(
                     color: Colors.white,
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 40,
-                      horizontal: 60,
+                    margin: const EdgeInsets.only(
+                      top: 10,
+                      bottom: 30,
+                      left: 50,
+                      right: 50,
                     ),
                     child: ListTile(
                       leading: Icon(
@@ -159,12 +169,84 @@ class MyApp extends StatelessWidget {
                       ),
                       title: const Text(
                         'drakocodeforever@gmail.com',
+                        maxLines: 1,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          // fontSize: 24,
                         ),
                       ),
                     ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        // container 1
+                        height: 45,
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 40,
+                          horizontal: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.amber.shade900,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Contact Now',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // container 2
+                        height: 45,
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 40,
+                          horizontal: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.amber.shade900,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Download',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        // container 3
+                        height: 45,
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.symmetric(
+                          vertical: 40,
+                          horizontal: 6,
+                        ),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.amber.shade900,
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'Tap to build',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
