@@ -158,7 +158,7 @@ class MyApp extends StatelessWidget {
                     color: Colors.white,
                     margin: const EdgeInsets.only(
                       top: 10,
-                      bottom: 30,
+                      bottom: 10,
                       left: 50,
                       right: 50,
                     ),
@@ -185,7 +185,7 @@ class MyApp extends StatelessWidget {
                         height: 45,
                         padding: const EdgeInsets.all(8),
                         margin: const EdgeInsets.symmetric(
-                          vertical: 40,
+                          vertical: 11,
                           horizontal: 6,
                         ),
                         decoration: BoxDecoration(
@@ -207,7 +207,7 @@ class MyApp extends StatelessWidget {
                         height: 45,
                         padding: const EdgeInsets.all(8),
                         margin: const EdgeInsets.symmetric(
-                          vertical: 40,
+                          vertical: 11,
                           horizontal: 6,
                         ),
                         decoration: BoxDecoration(
@@ -229,7 +229,7 @@ class MyApp extends StatelessWidget {
                         height: 45,
                         padding: const EdgeInsets.all(8),
                         margin: const EdgeInsets.symmetric(
-                          vertical: 40,
+                          vertical: 11,
                           horizontal: 6,
                         ),
                         decoration: BoxDecoration(
