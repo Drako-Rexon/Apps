@@ -13,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen>
   int leftDiceNumber = Random().nextInt(6) + 1,
       rightDiceNumber = Random().nextInt(6) + 1;
   late AnimationController _control;
+  late CurvedAnimation curveAnimation;
 
   @override
   void initState() {
@@ -26,8 +27,10 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   void animation() {
-    _control =
-        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    _control = AnimationController(
+        duration: const Duration(milliseconds: 1000), vsync: this);
+    curveAnimation =
+        CurvedAnimation(parent: _control, curve: Curves.bounceInOut);
 
     _control.addListener(() {
       setState(() {});
@@ -66,35 +69,38 @@ class _HomeScreenState extends State<HomeScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: GestureDetector(
-                    onDoubleTap: roll,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image(
-                        height: 300 - (_control.value) * 300,
-                        image: AssetImage(
-                            'assets/images/dice-$leftDiceNumber.png'),
+            Container(
+              height: 300,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onDoubleTap: roll,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image(
+                          height: 100 - (curveAnimation.value) * 100,
+                          image: AssetImage(
+                              'assets/images/dice-$leftDiceNumber.png'),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: GestureDetector(
-                    onDoubleTap: roll,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image(
-                        height: 300 - (_control.value) * 300,
-                        image: AssetImage(
-                            'assets/images/dice-$rightDiceNumber.png'),
+                  Expanded(
+                    child: GestureDetector(
+                      onDoubleTap: roll,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image(
+                          height: 100 - (curveAnimation.value) * 100,
+                          image: AssetImage(
+                              'assets/images/dice-$rightDiceNumber.png'),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             RaisedButton(
               color: Colors.lightGreen,
