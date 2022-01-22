@@ -8,14 +8,45 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
-  int leftDiceNumber = Random().nextInt(6) + 1, rightDiceNumber = Random().nextInt(6) + 1;
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  int leftDiceNumber = Random().nextInt(6) + 1,
+      rightDiceNumber = Random().nextInt(6) + 1;
+  late AnimationController _control;
+
+  @override
+  void initState() {
+    super.initState();
+    animation();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  void animation() {
+    _control =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+
+    _control.addListener(() {
+      setState(() {});
+      print(_control.value);
+    });
+    _control.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        print("Hurray! Completed!!!");
+        _control.reverse();
+        setState(() {
+          leftDiceNumber = Random().nextInt(6) + 1;
+          rightDiceNumber = Random().nextInt(6) + 1;
+        });
+      }
+    });
+  }
 
   void roll() {
-    setState(() {
-      leftDiceNumber = Random().nextInt(6) + 1;
-      rightDiceNumber = Random().nextInt(6) + 1;
-    });
+    _control.forward();
   }
 
   @override
@@ -43,6 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Image(
+                        height: 300 - (_control.value) * 300,
                         image: AssetImage(
                             'assets/images/dice-$leftDiceNumber.png'),
                       ),
@@ -55,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Image(
+                        height: 300 - (_control.value) * 300,
                         image: AssetImage(
                             'assets/images/dice-$rightDiceNumber.png'),
                       ),
