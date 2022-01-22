@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   void animation() {
     _control = AnimationController(
-        duration: const Duration(milliseconds: 1000), vsync: this);
+        duration: const Duration(milliseconds: 500), vsync: this);
     curveAnimation =
         CurvedAnimation(parent: _control, curve: Curves.bounceInOut);
 
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 300,
               child: Row(
                 children: [
