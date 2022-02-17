@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:yoboresto/main.dart';
 import 'package:yoboresto/signinpage.dart';
+import 'create-account.dart';
 import 'main.dart';
 
 class SignInPage extends StatefulWidget {
@@ -74,14 +75,21 @@ class _SignInPageState extends State<SignInPage> {
       bottomNavigationBar: Container(
         height: 100,
         color: customWhite,
-        
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40,),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 40,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      PageTransition(
+                          child: CreateAccount(),
+                          type: PageTransitionType.rightToLeft));
+                },
                 child: Text(
                   'Create account',
                   style: TextStyle(
