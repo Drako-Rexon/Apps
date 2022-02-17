@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:yoboresto/forgotpassword.dart';
 import 'package:yoboresto/main.dart';
+import 'forgotpassword.dart';
 
 class SignIn extends StatefulWidget {
   SignIn({Key? key}) : super(key: key);
@@ -43,12 +46,13 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 25,
               ),
               Text(
                 'Sign in',
                 style: TextStyle(
                   fontSize: 35,
+                  fontFamily: 'Open',
                 ),
               ),
               SizedBox(
@@ -60,22 +64,37 @@ class _SignInState extends State<SignIn> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Using'),
-                      SizedBox(
-                        height: 5,
+                      Text(
+                        'Using',
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
                       ),
-                      Text('Mobile number'),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      SizedBox(
-                        height: 17,
+                      Row(
+                        children: [
+                          Text(
+                            'Mobile number',
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Text(
+                            'Email id',
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text('Email id'),
                     ],
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 40,
               ),
               Column(
                 children: [
@@ -85,6 +104,9 @@ class _SignInState extends State<SignIn> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Phone number'),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             children: [
                               DropdownButton(
@@ -126,11 +148,11 @@ class _SignInState extends State<SignIn> {
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.lightBlueAccent,
+                                        color: Color.fromARGB(255, 93, 93, 93),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.all(
-                                        Radius.circular(32),
+                                        Radius.circular(1),
                                       ),
                                     ),
                                   ),
@@ -175,16 +197,16 @@ class _SignInState extends State<SignIn> {
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.all(
-                                        Radius.circular(32),
+                                        Radius.circular(1),
                                       ),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                        color: Colors.lightBlueAccent,
+                                        color: Color.fromARGB(255, 93, 93, 93),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.all(
-                                        Radius.circular(32),
+                                        Radius.circular(1),
                                       ),
                                     ),
                                   ),
@@ -196,6 +218,32 @@ class _SignInState extends State<SignIn> {
                       ),
                     ],
                   ),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            PageTransition(
+                              child: ForgotPassword(),
+                              type: PageTransitionType.rightToLeft,
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Forgot Password?(working)',
+                          style: TextStyle(
+                            color: deepOrange,
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          elevation: MaterialStateProperty.all(0),
+                          backgroundColor:
+                              MaterialStateProperty.all(customWhite),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ],
@@ -252,7 +300,7 @@ class _SignInState extends State<SignIn> {
                   ),
                   backgroundColor: MaterialStateProperty.all(deepOrange),
                 ),
-                child: Text('working'),
+                child: Text('Sign in'),
               ),
             ],
           ),
@@ -261,3 +309,137 @@ class _SignInState extends State<SignIn> {
     );
   }
 }
+
+
+// ! This below is for sign in using email id 
+//                  Column(
+//                 children: [
+//                   Row(
+//                     children: [
+//                       Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Text('Email id'),
+//                           SizedBox(
+//                             height: 10,
+//                           ),
+//                           Row(
+//                             children: [
+//                               
+//                               Container(
+//                                 height: 50,
+//                                 width: devWidth - 60,
+//                                 child: TextField(
+//                                   onChanged: (value) {},
+//                                   decoration: const InputDecoration(
+//                                     hintText: 'Enter your email id',
+//                                     contentPadding: EdgeInsets.symmetric(
+//                                       vertical: 10,
+//                                       horizontal: 20,
+//                                     ),
+//                                     border: OutlineInputBorder(
+//                                       borderRadius: BorderRadius.all(
+//                                         Radius.circular(32),
+//                                       ),
+//                                     ),
+//                                     enabledBorder: OutlineInputBorder(
+//                                       borderSide: BorderSide(
+//                                         color: Color.fromARGB(255, 93, 93, 93),
+//                                         width: 2,
+//                                       ),
+//                                       borderRadius: BorderRadius.all(
+//                                         Radius.circular(1),
+//                                       ),
+//                                     ),
+//                                     focusedBorder: OutlineInputBorder(
+//                                       borderSide: BorderSide(
+//                                         color: Color.fromARGB(255, 93, 93, 93),
+//                                         width: 2,
+//                                       ),
+//                                       borderRadius: BorderRadius.all(
+//                                         Radius.circular(1),
+//                                       ),
+//                                     ),
+//                                   ),
+//                                 ),
+//                               ),
+//                             ],
+//                           ),
+//                         ],
+//                       ),
+//                     ],
+//                   ),
+//                   Row(
+//                     children: [
+//                       Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Text('Password'),
+//                           SizedBox(
+//                             height: 10,
+//                           ),
+//                           Row(
+//                             children: [
+//                               Container(
+//                                 height: 50,
+//                                 width: devWidth - 60,
+//                                 child: TextField(
+//                                   onChanged: (value) {},
+//                                   decoration: const InputDecoration(
+//                                     hintText: 'Enter your password',
+//                                     contentPadding: EdgeInsets.symmetric(
+//                                       vertical: 10,
+//                                       horizontal: 20,
+//                                     ),
+//                                     border: OutlineInputBorder(
+//                                       borderRadius: BorderRadius.all(
+//                                         Radius.circular(32),
+//                                       ),
+//                                     ),
+//                                     enabledBorder: OutlineInputBorder(
+//                                       borderSide: BorderSide(
+//                                         color: Color.fromARGB(255, 93, 93, 93),
+//                                         width: 2,
+//                                       ),
+//                                       borderRadius: BorderRadius.all(
+//                                         Radius.circular(1),
+//                                       ),
+//                                     ),
+//                                     focusedBorder: OutlineInputBorder(
+//                                       borderSide: BorderSide(
+//                                         color: Color.fromARGB(255, 93, 93, 93),
+//                                         width: 2,
+//                                       ),
+//                                       borderRadius: BorderRadius.all(
+//                                         Radius.circular(1),
+//                                       ),
+//                                     ),
+//                                   ),
+//                                 ),
+//                               ),
+//                             ],
+//                           ),
+//                         ],
+//                       ),
+//                     ],
+//                   ),
+//                   Column(
+//                     children: [
+//                       ElevatedButton(
+//                         onPressed: null,
+//                         child: Text(
+//                           'Forgot Password?',
+//                           style: TextStyle(
+//                             color: deepOrange,
+//                           ),
+//                         ),
+//                         style: ButtonStyle(
+//                           elevation: MaterialStateProperty.all(0),
+//                           backgroundColor:
+//                               MaterialStateProperty.all(customWhite),
+//                         ),
+//                       ),
+//                     ],
+//                   )
+//                 ],
+//               ),

@@ -115,7 +115,7 @@ class _SignInPageState extends State<SignInPage> {
                   Navigator.push(
                     context,
                     PageTransition(
-                      type: PageTransitionType.fade,
+                      type: PageTransitionType.leftToRight,
                       child: SignIn(),
                     ),
                   );
