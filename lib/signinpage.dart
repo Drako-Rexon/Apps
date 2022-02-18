@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:yoboresto/create-account.dart';
 import 'package:yoboresto/forgotpassword.dart';
 import 'package:yoboresto/main.dart';
 import 'forgotpassword.dart';
@@ -20,7 +21,7 @@ class _SignInState extends State<SignIn> {
     var devWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -265,7 +266,13 @@ class _SignInState extends State<SignIn> {
                 children: [
                   Text('New user ?'),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          PageTransition(
+                              child: CreateAccount(),
+                              type: PageTransitionType.leftToRight));
+                    },
                     style: ButtonStyle(
                       padding: MaterialStateProperty.all(EdgeInsets.zero),
                       elevation: MaterialStateProperty.all(0),

@@ -17,7 +17,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     var devWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -216,7 +216,7 @@ class _EnterOTPState extends State<EnterOTP> {
     var devWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -407,7 +407,7 @@ class _ResetPasswordState extends State<ResetPassword> {
   Widget build(BuildContext context) {
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
