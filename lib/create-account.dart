@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:yoboresto/choose_location.dart';
 import 'package:yoboresto/homepage.dart';
 import 'package:yoboresto/redirectPages.dart';
 import 'forgotpassword.dart';
@@ -211,7 +212,6 @@ class _VerifyAccountCreatingState extends State<VerifyAccountCreating> {
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
-        
         child: Padding(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,
@@ -424,23 +424,8 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 255, 224, 234),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios_new,
-                    color: Color.fromARGB(255, 195, 90, 90),
-                  ),
-                ),
-              ),
               SizedBox(
-                height: 25,
+                height: 85,
               ),
               Text(
                 'Account details',
@@ -460,11 +445,11 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
               Text('Full name'),
               Container(
                 height: 50,
-                width: devWidth - 120,
+                width: devWidth - 60,
                 child: TextField(
                   onChanged: (value) {},
                   decoration: const InputDecoration(
-                    hintText: 'Enter OTP',
+                    hintText: 'Enter your full name',
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
@@ -514,12 +499,11 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
               ),
               Container(
                 height: 50,
-                width: devWidth - 120,
+                width: devWidth - 60,
                 child: TextField(
                   onChanged: (value) {},
                   decoration: const InputDecoration(
-                    
-                    hintText: 'Enter your full name',
+                    hintText: 'Enter your email',
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
@@ -569,11 +553,12 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
               ),
               Container(
                 height: 50,
-                width: devWidth - 120,
+                width: devWidth - 60,
                 child: TextField(
+                  keyboardType: TextInputType.number,
                   onChanged: (value) {},
                   decoration: const InputDecoration(
-                    hintText: 'Enter OTP',
+                    hintText: 'Enter Date of birth',
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
@@ -610,13 +595,14 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
               Text('Password'),
               Container(
                 height: 50,
-                width: devWidth - 120,
+                width: devWidth - 60,
                 child: TextField(
-                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
 
+                  // keyboardType: TextInputType.pas,
                   onChanged: (value) {},
                   decoration: const InputDecoration(
-                    hintText: 'Enter OTP',
+                    hintText: 'Enter new password',
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
@@ -653,11 +639,12 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
               Text('Confirm password'),
               Container(
                 height: 50,
-                width: devWidth - 120,
+                width: devWidth - 60,
                 child: TextField(
+                  obscureText: true,
                   onChanged: (value) {},
                   decoration: const InputDecoration(
-                    hintText: 'Enter OTP',
+                    hintText: 'Enter confirm password',
                     contentPadding: EdgeInsets.symmetric(
                       vertical: 10,
                       horizontal: 20,
@@ -736,7 +723,7 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
                   Navigator.push(
                     context,
                     PageTransition(
-                      child: RedirectPages(),
+                      child: ChooseLocation(),
                       type: PageTransitionType.rightToLeft,
                     ),
                   );
