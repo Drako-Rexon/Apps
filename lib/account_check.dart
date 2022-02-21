@@ -20,7 +20,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       body: Container(
         color: customWhite,
-        child: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

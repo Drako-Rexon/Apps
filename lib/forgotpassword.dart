@@ -559,8 +559,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   Navigator.push(
                     context,
                     PageTransition(
-                        child: SignIn(),
-                        type: PageTransitionType.leftToRight),
+                        child: SignIn(), type: PageTransitionType.leftToRight),
                   );
                 },
                 style: ButtonStyle(

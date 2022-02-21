@@ -42,7 +42,7 @@ class _SignInState extends State<SignIn> {
                   },
                   icon: Icon(
                     Icons.arrow_back_ios_new,
-                    color: Color.fromARGB(255, 195, 90, 90),
+                    color: Colors.black,
                   ),
                 ),
               ),

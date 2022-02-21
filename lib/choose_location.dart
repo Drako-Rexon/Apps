@@ -13,6 +13,8 @@ class ChooseLocation extends StatefulWidget {
 class _ChooseLocationState extends State<ChooseLocation> {
   @override
   Widget build(BuildContext context) {
+    String dropdownValue = 'Saved addresses';
+    var items = ['+91', '+1', '+251'];
     var devHeight = MediaQuery.of(context).size.height;
     var devWidth = MediaQuery.of(context).size.width;
     return Stack(
@@ -130,18 +132,44 @@ class _ChooseLocationState extends State<ChooseLocation> {
                   ),
                 ),
               ),
-              DropdownButton(
-                                  items: items.map((String items) {
-                                    return DropdownMenuItem(
-                                      value: items,
-                                      child: Text(items),
-                                    );
-                                  }).toList(),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      dropdownValue = newValue!;
-                                    });
-                                  }),
+              Container(
+                height: 50,
+                width: devWidth,
+                color: customWhite,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.bookmark,
+                      color: deepOrange,
+                    ),
+                    DropdownButton(
+                        underline: Container(
+                          height: 0,
+                          width: devWidth,
+                          // color: Colors.grey,
+                        ),
+                        dropdownColor: customWhite,
+                        // isExpanded: true,
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(
+                              items,
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownValue = newValue!;
+                          });
+                        }),
+                  ],
+                ),
+              ),
             ],
           ),
           bottomNavigationBar: Container(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:yoboresto/homepage.dart';
+import 'main.dart';
 
 class RedirectPages extends StatefulWidget {
   RedirectPages({Key? key}) : super(key: key);
@@ -18,13 +19,15 @@ class _RedirectPagesState extends State<RedirectPages> {
     Feather.user
   ];
 
+  List navIconsName = ["Home", "Favourites", "", "Orders", "Account"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: customWhite,
         leading: const IconButton(
           onPressed: null,
           icon: Icon(
@@ -89,109 +92,48 @@ class _RedirectPagesState extends State<RedirectPages> {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              children: const [
-                IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.home_outlined, //navIcons[0],
-                    size: 28,
-                    color: Colors.black,
-                  ),
-                ),
-                Text(
-                  'Home',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  onPressed: () {
-                    // setState(() {
-                    //   color:
-                    //   Color(0xFFE46829);
-                    // });
-                  },
-                  icon: Icon(
-                    navIcons[1],
-                    size: 28,
-                    color: Colors.black,
-                  ),
-                ),
-                const Text(
-                  'Favourites',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: const Color(0xFFE46829),
-                  child: Center(
-                    child: IconButton(
-                      onPressed: null,
-                      icon: Icon(
-                        navIcons[2],
-                        size: 28,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                // Text(
-                //   'Home',
-                //   style: TextStyle(
-                //     fontSize: 14,
-                //   ),
-                // ),
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    navIcons[3],
-                    size: 28,
-                    color: Colors.black,
-                  ),
-                ),
-                const Text(
-                  'Orders',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    navIcons[4],
-                    size: 28,
-                    color: Colors.black,
-                  ),
-                ),
-                const Text(
-                  'Account',
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-          ],
+          children: List.generate(
+            navIcons.length,
+            (index) {
+              return index == 2
+                  ? Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: deepOrange,
+                          child: Center(
+                            child: IconButton(
+                              onPressed: null,
+                              icon: Icon(
+                                navIcons[2],
+                                size: 28,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  : Column(
+                      children: [
+                        IconButton(
+                          onPressed: null,
+                          icon: Icon(
+                            navIcons[index], //navIcons[0],
+                            size: 28,
+                            color: Colors.black,
+                          ),
+                        ),
+                        Text(
+                          navIconsName[index],
+                          style: TextStyle(
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    );
+            },
+          ),
         ),
       ),
     );
