@@ -18,26 +18,33 @@ class _SignInPageState extends State<SignInPage> {
     var devWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        
+        elevation: 0,
+        backgroundColor: customWhite,
+        actions: [
+          
+          Row(mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Explore  the app',
+                textAlign: TextAlign.left,
+                style: TextStyle(
+                  color: Color(0xFFE46829),
+                  fontSize: 15,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       body: Container(
         color: customWhite,
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 20,
-                  left: devWidth - 220,
-                ),
-                child: Text(
-                  'Explore  the app',
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    color: Color(0xFFE46829),
-                    fontSize: 15,
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 40,
               ),

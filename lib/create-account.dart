@@ -22,131 +22,133 @@ class _CreateAccountState extends State<CreateAccount> {
 
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 30,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 255, 224, 234),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios_new,
-                    color: Color.fromARGB(255, 195, 90, 90),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 30,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color.fromARGB(255, 255, 224, 234),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                'Create an account',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontFamily: 'Open',
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-
-              SizedBox(
-                height: 30,
-              ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Mobile number',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Color.fromARGB(255, 195, 90, 90),
                     ),
                   ),
-                  SizedBox(
-                    height: 8,
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Text(
+                  'Create an account',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontFamily: 'Open',
                   ),
-                  Text(
-                    'Keep your phone we will texted you a verification \ncode to your phone',
-                    style: TextStyle(color: Colors.grey),
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              Text('Phone number'),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: [
-                  DropdownButton(
-                      items: items.map((String items) {
-                        return DropdownMenuItem(
-                          value: items,
-                          child: Text(items),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          dropdownValue = newValue!;
-                        });
-                      }),
-                  Container(
-                    height: 50,
-                    width: devWidth - 120,
-                    child: TextField(
-                      onChanged: (value) {},
-                      decoration: const InputDecoration(
-                        hintText: 'Enter your phone number',
-                        labelText: 'Phone number',
-                        contentPadding: EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 20,
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(32),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+
+                SizedBox(
+                  height: 30,
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Mobile number',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      'Keep your phone we will texted you a verification \ncode to your phone',
+                      style: TextStyle(color: Colors.grey),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Text('Phone number'),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    DropdownButton(
+                        items: items.map((String items) {
+                          return DropdownMenuItem(
+                            value: items,
+                            child: Text(items),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownValue = newValue!;
+                          });
+                        }),
+                    Container(
+                      height: 50,
+                      width: devWidth - 120,
+                      child: TextField(
+                        onChanged: (value) {},
+                        decoration: const InputDecoration(
+                          hintText: 'Enter your phone number',
+                          labelText: 'Phone number',
+                          contentPadding: EdgeInsets.symmetric(
+                            vertical: 10,
+                            horizontal: 20,
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color.fromARGB(255, 93, 93, 93),
-                            width: 2,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(32),
+                            ),
                           ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(1),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color.fromARGB(255, 93, 93, 93),
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(1),
+                            ),
                           ),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color.fromARGB(255, 93, 93, 93),
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(1),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color.fromARGB(255, 93, 93, 93),
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(1),
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -212,131 +214,133 @@ class _VerifyAccountCreatingState extends State<VerifyAccountCreating> {
     var devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 30,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 255, 224, 234),
-                ),
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios_new,
-                    color: Color.fromARGB(255, 195, 90, 90),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 30,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color.fromARGB(255, 255, 224, 234),
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios_new,
+                      color: Color.fromARGB(255, 195, 90, 90),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                'Account verification',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontFamily: 'Open',
+                SizedBox(
+                  height: 25,
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                'Enter your verification code',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontFamily: 'Open Sans',
-                  color: Colors.black,
-                ),
-              ),
-              SizedBox(
-                height: 40,
-              ),
-              // SizedBox(
-              //   height: 20,
-              // ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'We have texted you a verification code to your\nphone number +91 99xxxx123',
-                        style: TextStyle(fontSize: 15, color: Colors.grey),
-                      ),
-                    ],
+                Text(
+                  'Account verification',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontFamily: 'Open',
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 40,
-              ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Enter your verification code',
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontFamily: 'Open Sans',
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                // SizedBox(
+                //   height: 20,
+                // ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'We have texted you a verification code to your\nphone number +91 99xxxx123',
+                          style: TextStyle(fontSize: 15, color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
 
-              Container(
-                height: 50,
-                width: devWidth - 120,
-                child: TextField(
-                  onChanged: (value) {},
-                  decoration: const InputDecoration(
-                    hintText: 'Enter OTP',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
+                Container(
+                  height: 50,
+                  width: devWidth - 120,
+                  child: TextField(
+                    onChanged: (value) {},
+                    decoration: const InputDecoration(
+                      hintText: 'Enter OTP',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 20,
                       ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(32),
+                        ),
                       ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Didn\'t receive OTP'),
-                  ElevatedButton(
-                    onPressed: null,
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(customWhite),
-                      padding: null,
-                    ),
-                    child: Text(
-                      'Resend OTP',
-                      style: TextStyle(
-                        color: deepOrange,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Didn\'t receive OTP'),
+                    ElevatedButton(
+                      onPressed: null,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(customWhite),
+                        padding: null,
+                      ),
+                      child: Text(
+                        'Resend OTP',
+                        style: TextStyle(
+                          color: deepOrange,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -416,295 +420,313 @@ class _EnterAccountDetailsState extends State<EnterAccountDetails> {
 
     return Scaffold(
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 30,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 85,
-              ),
-              Text(
-                'Account details',
-                style: TextStyle(
-                  fontSize: 35,
-                  fontFamily: 'Open',
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 30,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 45,
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-
-              // SizedBox(
-              //   height: 20,
-              // ),
-
-              Text('Full name'),
-              Container(
-                height: 50,
-                width: devWidth - 60,
-                child: TextField(
-                  onChanged: (value) {},
-                  decoration: const InputDecoration(
-                    hintText: 'Enter your full name',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
+                Text(
+                  'Account details',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontFamily: 'Open',
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Email id',
-                    style: TextStyle(),
-                  ),
-                  Text(
-                    '(optional)',
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                height: 50,
-                width: devWidth - 60,
-                child: TextField(
-                  onChanged: (value) {},
-                  decoration: const InputDecoration(
-                    hintText: 'Enter your email',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
+                SizedBox(
+                  height: 10,
+                ),
+                Text('Full name'),
+                SizedBox(
+                  height:10,
+                ),
+                Container(
+                  height: 50,
+                  width: devWidth - 60,
+                  child: TextField(
+                    
+                    onChanged: (value) {},
+                    decoration: const InputDecoration(
+                      labelText: 'Full name',
+                      hintText: 'Enter your full name',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 20,
                       ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(32),
+                        ),
                       ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Row(
-                children: [
-                  Text(
-                    'Date of birth',
-                    style: TextStyle(),
-                  ),
-                  Text(
-                    '(optional)',
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                height: 50,
-                width: devWidth - 60,
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  onChanged: (value) {},
-                  decoration: const InputDecoration(
-                    hintText: 'Enter Date of birth',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                  ),
+                SizedBox(
+                  height: 6,
                 ),
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Text('Password'),
-              Container(
-                height: 50,
-                width: devWidth - 60,
-                child: TextField(
-                  obscureText: true,
-
-                  // keyboardType: TextInputType.pas,
-                  onChanged: (value) {},
-                  decoration: const InputDecoration(
-                    hintText: 'Enter new password',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 20,
+                Row(
+                  children: [
+                    Text(
+                      'Email id',
+                      style: TextStyle(),
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 6,
-              ),
-              Text('Confirm password'),
-              Container(
-                height: 50,
-                width: devWidth - 60,
-                child: TextField(
-                  obscureText: true,
-                  onChanged: (value) {},
-                  decoration: const InputDecoration(
-                    hintText: 'Enter confirm password',
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: 10,
-                      horizontal: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(32),
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color.fromARGB(255, 93, 93, 93),
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(1),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Checkbox(
-                    checkColor: Colors.white,
-                    fillColor: MaterialStateProperty.resolveWith(getColor),
-                    value: isChecked,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        isChecked = value!;
-                      });
-                    },
-                  ),
-                  Text('I accept all the'),
-                  ElevatedButton(
-                    onPressed: null,
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(customWhite),
-                      padding: null,
-                    ),
-                    child: Text(
-                      'terms and conditions',
+                    Text(
+                      '(optional)',
                       style: TextStyle(
-                        color: deepOrange,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height:10,
+                ),
+                Container(
+                  height: 50,
+                  width: devWidth - 60,
+                  child: TextField(
+                    onChanged: (value) {},
+                    decoration: const InputDecoration(
+                      labelText: 'Email id',
+                      hintText: 'Enter your email',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 20,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(32),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
                       ),
                     ),
                   ),
-                ],
-              ),
-            ],
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Date of birth',
+                      style: TextStyle(),
+                    ),
+                    Text(
+                      '(optional)',
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height:10,
+                ),
+                Container(
+                  height: 50,
+                  width: devWidth - 60,
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    onChanged: (value) {},
+                    decoration: const InputDecoration(
+                      labelText: 'Date of birth',
+                      hintText: 'Enter Date of birth',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 20,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(32),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Text('Password'),
+                SizedBox(
+                  height:10,
+                ),
+                Container(
+                  height: 50,
+                  width: devWidth - 60,
+                  child: TextField(
+                    obscureText: true,
+
+                    // keyboardType: TextInputType.pas,
+                    onChanged: (value) {},
+                    decoration: const InputDecoration(
+                      labelText: 'Password',
+                      hintText: 'Enter new password',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 20,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(32),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 6,
+                ),
+                Text('Confirm password'),
+                SizedBox(
+                  height:10,
+                ),
+                Container(
+                  height: 50,
+                  width: devWidth - 60,
+                  child: TextField(
+                    obscureText: true,
+                    onChanged: (value) {},
+                    decoration: const InputDecoration(
+                      labelText: 'Confirm password',
+                      hintText: 'Enter confirm password',
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 20,
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(32),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 93, 93, 93),
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(1),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Checkbox(
+                      checkColor: Colors.white,
+                      fillColor: MaterialStateProperty.resolveWith(getColor),
+                      value: isChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ),
+                    Text('I accept all the'),
+                    ElevatedButton(
+                      onPressed: null,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(customWhite),
+                        padding: null,
+                      ),
+                      child: Text(
+                        'terms and conditions',
+                        style: TextStyle(
+                          color: deepOrange,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ), //Safearea
