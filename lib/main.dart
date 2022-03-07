@@ -9,20 +9,34 @@ var myPerfectGreen = const Color(0xFF00855e);
 var myBlack = const Color(0xFF011600);
 var myLightGrey = const Color(0xFFefeff0);
 
-
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
-    ),
-  );
+  runApp(MyApp());
 }
 
+class MyApp extends StatefulWidget {
+  MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        primarySwatch: Colors.yellow,
+      ),
+      home: const Home(),
+    );
+  }
+}
 // * The below code is for the home
 
 class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -42,19 +56,19 @@ class _HomeState extends State<Home> {
     "Books",
   ];
 
-  int activeTab = 1;
+  int activeTab = 0;
   @override
   Widget build(BuildContext context) {
-    double devWidth = MediaQuery.of(context).size.width;
+    // double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         elevation: 6,
         backgroundColor: myWhite,
         title: Column(
           children: [
-            Row(
-              children: [/*This is for the above search bar*/],
-            ),
+            // Row(
+            //   children: [],/*This is for the above search bar*/
+            // ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -63,7 +77,7 @@ class _HomeState extends State<Home> {
                   child: Row(
                     children: List.generate(catagoryNav.length, (index) {
                       return Container(
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 10,
                           vertical: 10,
                         ),
@@ -92,15 +106,21 @@ class _HomeState extends State<Home> {
     return IndexedStack(
       index: activeTab,
       children: [
-        HomePage(),
+        const HomePage(),
         Center(
-          child: Text(navText[activeTab],),
+          child: Text(
+            navText[activeTab],
+          ),
         ),
         Center(
-          child: Text(navText[activeTab],),
+          child: Text(
+            navText[activeTab],
+          ),
         ),
         Center(
-          child: Text(navText[activeTab],),
+          child: Text(
+            navText[activeTab],
+          ),
         ),
       ],
     );
@@ -113,7 +133,7 @@ class _HomeState extends State<Home> {
       height: 74,
       decoration: BoxDecoration(
         color: myWhite,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black,
             blurRadius: 2,

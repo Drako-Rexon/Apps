@@ -3,7 +3,7 @@ import 'package:play_store_clone/main.dart';
 import 'json.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -34,12 +34,13 @@ class _HomePageState extends State<HomePage> {
                           bottom: 30,
                         ),
                         child: Container(
-                          padding: EdgeInsets.only(left: 25),
+                          padding: const EdgeInsets.only(left: 25),
                           width: devWidth - 50,
                           height: 180,
                           decoration: BoxDecoration(
                             color: homeOneCards1[index]["color"],
-                            borderRadius: BorderRadius.all(Radius.circular(14)),
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(14)),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -77,9 +78,9 @@ class _HomePageState extends State<HomePage> {
                             Icons.headphones,
                             color: myGrey,
                           ),
-                          SizedBox(
-                            width: 8,
-                          ),
+                          // const SizedBox(
+                          //   width: 8,
+                          // ),
                           Text(
                             "Editor's Choice games",
                             style: TextStyle(
@@ -109,7 +110,7 @@ class _HomePageState extends State<HomePage> {
                           bottom: 30,
                         ),
                         child: Container(
-                          // ! color: myPerfectGreen, 
+                          // ! color: myPerfectGreen,
                           // * This is for testing a card's limit
                           width: devWidth - 50,
                           height: 180,
@@ -118,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 height: 100,
                                 width: devWidth - 50,
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(14),
                                   ),
@@ -139,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                                     child: Container(
                                       width: 50,
                                       height: 50,
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                         borderRadius: BorderRadius.all(
                                           Radius.circular(16),
                                         ),
@@ -160,19 +161,19 @@ class _HomePageState extends State<HomePage> {
                                         Row(
                                           children: [
                                             Text(homeOneCards2[index]["title"]),
-                                            Icon(
+                                            const Icon(
                                               Icons.circle,
                                               size: 4,
                                             ),
                                             Text(homeOneCards2[index]
                                                 ["catagory1"]),
-                                            Icon(
+                                            const Icon(
                                               Icons.circle,
                                               size: 4,
                                             ),
                                             Text(homeOneCards2[index]
                                                 ["catagory2"]),
-                                            Icon(
+                                            const Icon(
                                               Icons.circle,
                                               size: 4,
                                             ),
@@ -182,8 +183,9 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                         Row(
                                           children: [
-                                            Text(homeOneCards2[index]['rating']),
-                                            Text('size'),
+                                            Text(
+                                                homeOneCards2[index]['rating']),
+                                            const Text('size'),
                                           ],
                                         ),
                                       ],
