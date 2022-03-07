@@ -33,3 +33,54 @@ List homeOneCards1 = [
     "color": Color(0xFF4c9fbc)
   }
 ];
+
+List homeOneCards2 = [
+  {
+    "title": "Game1",
+    "catagory1": "Puzzle",
+    "catagory2": "Logic",
+    "catagory3": "Casual",
+    "mode": "Offline",
+    "rating": '4.6'
+  },
+  {
+    "title": "Game2",
+    "catagory1": "Puzzle",
+    "catagory2": "Logic",
+    "catagory3": "Casual",
+    "mode": "Online",
+    "rating": '4.6'
+  },
+  {
+    "title": "Game3",
+    "catagory1": "Puzzle",
+    "catagory2": "Logic",
+    "catagory3": "Casual",
+    "mode": "Offline",
+    "rating": '4.6'
+  },
+  {
+    "title": "Game4",
+    "catagory1": "Puzzle",
+    "catagory2": "Logic",
+    "catagory3": "Casual",
+    "mode": "Online",
+    "rating": '4.6'
+  },
+  {
+    "title": "Game5",
+    "catagory1": "Puzzle",
+    "catagory2": "Logic",
+    "catagory3": "Casual",
+    "mode": "Offline",
+    "rating": '4.6'
+  },
+  {
+    "title": "Game6",
+    "catagory1": "Puzzle",
+    "catagory2": "Logic",
+    "catagory3": "Casual",
+    "mode": "Online",
+    "rating": '4.6'
+  }
+];
