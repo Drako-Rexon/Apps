@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
-// import 'package:play_store_clone/homepage.dart';
+import 'package:play_store_clone/homepage.dart';
 import 'package:play_store_clone/json.dart';
+
+var myWhite = const Color(0xFFFFFFFF);
+var myGrey = const Color(0xFF7c8086);
+var myGreen = const Color(0xFF49ff49);
+var myPerfectGreen = const Color(0xFF00855e);
+var myBlack = const Color(0xFF011600);
+var myLightGrey = const Color(0xFFefeff0);
+
 
 void main() {
   runApp(
@@ -41,7 +49,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         elevation: 6,
-        backgroundColor: Colors.white,
+        backgroundColor: myWhite,
         title: Column(
           children: [
             Row(
@@ -62,7 +70,7 @@ class _HomeState extends State<Home> {
                         child: Text(
                           catagoryNav[index],
                           style: TextStyle(
-                            color: Colors.black,
+                            color: myBlack,
                             fontSize: 12,
                           ),
                         ),
@@ -81,7 +89,21 @@ class _HomeState extends State<Home> {
   }
 
   Widget getBody() {
-    return Container();
+    return IndexedStack(
+      index: activeTab,
+      children: [
+        HomePage(),
+        Center(
+          child: Text(navText[activeTab],),
+        ),
+        Center(
+          child: Text(navText[activeTab],),
+        ),
+        Center(
+          child: Text(navText[activeTab],),
+        ),
+      ],
+    );
   }
 
   Widget getNavBar() {
@@ -90,7 +112,7 @@ class _HomeState extends State<Home> {
       width: devWidth,
       height: 74,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: myWhite,
         boxShadow: [
           BoxShadow(
             color: Colors.black,
@@ -109,7 +131,7 @@ class _HomeState extends State<Home> {
             return Column(
               children: [
                 IconButton(
-                  color: activeTab == index ? Colors.green : Colors.grey,
+                  color: activeTab == index ? myPerfectGreen : myGrey,
                   onPressed: () {
                     setState(() {
                       activeTab = index;
@@ -122,6 +144,7 @@ class _HomeState extends State<Home> {
                 Text(
                   navText[index],
                   style: TextStyle(
+                    color: activeTab == index ? myPerfectGreen : myGrey,
                     fontSize: 12,
                   ),
                 ),
