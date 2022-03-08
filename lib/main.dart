@@ -6,7 +6,7 @@ var myWhite = const Color(0xFFFFFFFF);
 var myGrey = const Color(0xFF7c8086);
 var myGreen = const Color(0xFF49ff49);
 var myPerfectGreen = const Color(0xFF00855e);
-var myBlack = const Color(0xFF011600);
+var myBlack = const Color.fromARGB(255, 22, 22, 22);
 var myLightGrey = const Color(0xFFefeff0);
 
 void main() {
@@ -23,19 +23,6 @@ void main() {
   );
 }
 
-// class MyApp extends StatefulWidget {
-//   MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   State<MyApp> createState() => _MyAppState();
-// }
-
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return
-//   }
-// }
 // * The below code is for the home
 
 class Home extends StatefulWidget {

@@ -23,20 +23,20 @@ class _HomePageState extends State<HomePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: const EdgeInsets.only(left: 13),
                   child: Row(
                     children: List.generate(homeOneCards1.length, (index) {
                       return Padding(
                         padding: const EdgeInsets.only(
-                          left: 10,
-                          right: 10,
+                          left: 7,
+                          right: 8,
                           top: 30,
                           bottom: 30,
                         ),
                         child: Container(
                           padding: const EdgeInsets.only(left: 25),
                           width: devWidth - 50,
-                          height: 180,
+                          height: 120,
                           decoration: BoxDecoration(
                             color: homeOneCards1[index]["color"],
                             borderRadius:
@@ -50,14 +50,15 @@ class _HomePageState extends State<HomePage> {
                                 homeOneCards1[index]["title"],
                                 style: TextStyle(
                                   color: myLightGrey,
-                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13,
                                 ),
                               ),
                               Text(
                                 homeOneCards1[index]["sub-title"],
                                 style: TextStyle(
                                   color: myLightGrey,
-                                  fontSize: 14,
+                                  fontSize: 11,
                                 ),
                               ),
                             ],
@@ -208,6 +209,8 @@ class _HomePageState extends State<HomePage> {
                                           ],
                                         ),
                                         Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Text(
                                               homeOneCards2[index]['rating'],
@@ -255,7 +258,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Icon(
                           Icons.headphones,
-                          color: myGrey,
+                          color: myBlack,
                         ),
                         SizedBox(
                           width: 10,
@@ -406,6 +409,8 @@ class _HomePageState extends State<HomePage> {
                                           ],
                                         ),
                                         Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Text(
                                               homeOneCards2[index]['rating'],
@@ -477,128 +482,181 @@ class _HomePageState extends State<HomePage> {
                 scrollDirection: Axis.horizontal,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
+                  child: Container(
+                    child: Row(
+                      children: List.generate(homeOneCards2.length, (index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10,
+                            right: 10,
+                            top: 30,
+                          ),
+                          child: Container(
+                            // ! color: myPerfectGreen,
+                            // * This is for testing a card's limit
+                            width: devWidth - 180,
+                            height: 175,
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 90,
+                                  width: devWidth - 50,
+                                  decoration: const BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(14),
+                                    ),
+                                    image: DecorationImage(
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(
+                                          "images/more/coc_cover.jpg"),
+                                    ),
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        top: 14,
+                                        right: 10,
+                                      ),
+                                      child: Container(
+                                        width: 55,
+                                        height: 55,
+                                        decoration: const BoxDecoration(
+                                          borderRadius: BorderRadius.all(
+                                            Radius.circular(10),
+                                          ),
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                                "images/icons/coc.png"),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 10,
+                                        top: 10,
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            homeOneCards2[index]["title"],
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 2,
+                                          ),
+                                          Row(
+                                            children: [
+                                              Text(
+                                                homeOneCards2[index]
+                                                    ["catagory1"],
+                                                style: const TextStyle(
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                              const Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 3),
+                                                child: Icon(
+                                                  Icons.circle,
+                                                  size: 4,
+                                                ),
+                                              ),
+                                              Text(
+                                                homeOneCards2[index]
+                                                    ["catagory2"],
+                                                style: const TextStyle(
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                homeOneCards2[index]['rating'],
+                                                style: const TextStyle(
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                              const Padding(
+                                                padding:
+                                                    EdgeInsets.only(right: 7.0),
+                                                child: Icon(
+                                                  Icons.star,
+                                                  size: 8,
+                                                ),
+                                              ),
+                                              Text(
+                                                homeOneCards2[index]['size'],
+                                                style: TextStyle(
+                                                  fontSize: 10,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 13),
                   child: Row(
-                    children: List.generate(homeOneCards2.length, (index) {
+                    children: List.generate(homeOneCards1.length, (index) {
                       return Padding(
                         padding: const EdgeInsets.only(
-                          left: 10,
-                          right: 10,
+                          left: 7,
+                          right: 8,
                           top: 30,
                           bottom: 30,
                         ),
                         child: Container(
-                          // ! color: myPerfectGreen,
-                          // * This is for testing a card's limit
-                          width: devWidth - 180,
-                          height: 240,
+                          padding: const EdgeInsets.only(left: 25),
+                          width: devWidth - 50,
+                          height: 120,
+                          decoration: BoxDecoration(
+                            color: homeOneCards1[index]["color"],
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(14)),
+                          ),
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                height: 90,
-                                width: devWidth - 50,
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.all(
-                                    Radius.circular(14),
-                                  ),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image:
-                                        AssetImage("images/more/coc_cover.jpg"),
-                                  ),
+                              Text(
+                                homeOneCards1[index]["title"],
+                                style: TextStyle(
+                                  color: myLightGrey,
+                                  fontSize: 18,
                                 ),
                               ),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      top: 14,
-                                      right: 10,
-                                    ),
-                                    child: Container(
-                                      width: 55,
-                                      height: 55,
-                                      decoration: const BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                          Radius.circular(10),
-                                        ),
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                              "images/icons/coc.png"),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                      left: 10,
-                                      top: 10,
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          homeOneCards2[index]["title"],
-                                          style: const TextStyle(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          height: 2,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              homeOneCards2[index]["catagory1"],
-                                              style: const TextStyle(
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 3),
-                                              child: Icon(
-                                                Icons.circle,
-                                                size: 4,
-                                              ),
-                                            ),
-                                            Text(
-                                              homeOneCards2[index]["catagory2"],
-                                              style: const TextStyle(
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: [
-                                            Text(
-                                              homeOneCards2[index]['rating'],
-                                              style: const TextStyle(
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                            const Padding(
-                                              padding:
-                                                  EdgeInsets.only(right: 7.0),
-                                              child: Icon(
-                                                Icons.star,
-                                                size: 8,
-                                              ),
-                                            ),
-                                            Text(
-                                              homeOneCards2[index]['size'],
-                                              style: TextStyle(
-                                                fontSize: 10,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                              Text(
+                                homeOneCards1[index]["sub-title"],
+                                style: TextStyle(
+                                  color: myLightGrey,
+                                  fontSize: 14,
+                                ),
                               ),
                             ],
                           ),
