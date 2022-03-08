@@ -41,7 +41,8 @@ List homeOneCards2 = [
     "catagory2": "Logic",
     "catagory3": "Casual",
     "mode": "Offline",
-    "rating": '4.6'
+    "rating": '4.6',
+    'size': "178 MB"
   },
   {
     "title": "Game2",
@@ -49,7 +50,8 @@ List homeOneCards2 = [
     "catagory2": "Logic",
     "catagory3": "Casual",
     "mode": "Online",
-    "rating": '4.6'
+    "rating": '4.2',
+    'size': "178 MB"
   },
   {
     "title": "Game3",
@@ -57,7 +59,8 @@ List homeOneCards2 = [
     "catagory2": "Logic",
     "catagory3": "Casual",
     "mode": "Offline",
-    "rating": '4.6'
+    "rating": '3.6',
+    'size': "178 MB"
   },
   {
     "title": "Game4",
@@ -65,7 +68,8 @@ List homeOneCards2 = [
     "catagory2": "Logic",
     "catagory3": "Casual",
     "mode": "Online",
-    "rating": '4.6'
+    "rating": '2.6',
+    'size': "178 MB"
   },
   {
     "title": "Game5",
@@ -73,7 +77,8 @@ List homeOneCards2 = [
     "catagory2": "Logic",
     "catagory3": "Casual",
     "mode": "Offline",
-    "rating": '4.6'
+    "rating": '3.7',
+    'size': "178 MB"
   },
   {
     "title": "Game6",
@@ -81,6 +86,7 @@ List homeOneCards2 = [
     "catagory2": "Logic",
     "catagory3": "Casual",
     "mode": "Online",
-    "rating": '4.6'
+    "rating": '5.0',
+    'size': "178 MB"
   }
 ];

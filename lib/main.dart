@@ -10,29 +10,32 @@ var myBlack = const Color(0xFF011600);
 var myLightGrey = const Color(0xFFefeff0);
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  runApp(
+    MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Play Store',
       theme: ThemeData(
         primaryColor: Colors.blue,
         primarySwatch: Colors.yellow,
       ),
       home: const Home(),
-    );
-  }
+    ),
+  );
 }
+
+// class MyApp extends StatefulWidget {
+//   MyApp({Key? key}) : super(key: key);
+
+//   @override
+//   State<MyApp> createState() => _MyAppState();
+// }
+
+// class _MyAppState extends State<MyApp> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return
+//   }
+// }
 // * The below code is for the home
 
 class Home extends StatefulWidget {
