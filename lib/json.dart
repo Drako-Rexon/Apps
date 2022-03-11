@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
 List catagoryNav = [
-  "Fetured",
+  "Featured",
   "Child",
   "Movie",
   "Games",
-  "Fetured",
+  "Featured",
   "Child",
   "Movie",
   "Games",

@@ -16,7 +16,7 @@ void main() {
       title: 'Play Store',
       theme: ThemeData(
         primaryColor: Colors.blue,
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.brown,
       ),
       home: const Home(),
     ),
@@ -49,42 +49,85 @@ class _HomeState extends State<Home> {
   int activeTab = 0;
   @override
   Widget build(BuildContext context) {
-    // double devWidth = MediaQuery.of(context).size.width;
+    double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        elevation: 6,
+        toolbarHeight: 100,
+        titleSpacing: 0,
+        elevation: 4,
         backgroundColor: myWhite,
-        title: Column(
-          children: [
-            // Row(
-            //   children: [],/*This is for the above search bar*/
-            // ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(catagoryNav.length, (index) {
-                      return Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 10,
+        title: SafeArea(
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    width: devWidth - 60,
+                    decoration: BoxDecoration(
+                      color: myWhite,
+                      boxShadow: [
+                        BoxShadow(
+                          color: myBlack,
+                          // offset: Offset(1, 1)
+                          spreadRadius: 0.2,
+                          blurRadius: 0.7,
                         ),
-                        child: Text(
-                          catagoryNav[index],
-                          style: TextStyle(
-                            color: myBlack,
-                            fontSize: 12,
-                          ),
+                      ],
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(3),
+                      ),
+                      border: Border.all(
+                        color: myLightGrey,
+                        width: 1,
+                        style: BorderStyle.solid,
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.search,
+                          color: myBlack,
                         ),
-                      );
-                    }),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        CircleAvatar(
+                          radius: 10,
+                          // backgroundImage: AssetImage('images/more/avatar.jpeg'),
+                          backgroundColor: myGreen,
+                        ),
+                      ],
+                    ),
+                    /*This is for the above search bar*/
                   ),
+                ],
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(catagoryNav.length, (index) {
+                    return Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 25,
+                        vertical: 25,
+                      ),
+                      child: Text(
+                        catagoryNav[index],
+                        style: TextStyle(
+                          color: myBlack,
+                          fontSize: 12,
+                        ),
+                      ),
+                    );
+                  }),
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: getNavBar(),

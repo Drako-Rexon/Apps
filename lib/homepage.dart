@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:play_store_clone/main.dart';
 import 'json.dart';
@@ -10,6 +11,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // var _currentIndex = 0;
+  List listThumbs = ['images/more/coc_cover.jpg'];
   @override
   Widget build(BuildContext context) {
     double devWidth = MediaQuery.of(context).size.width;
@@ -70,14 +73,29 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 25),
-                child: Text(
-                  'Casual Games',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
-                    color: myBlack,
-                  ),
+                padding: const EdgeInsets.only(
+                  left: 25,
+                  right: 15,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Casual Games',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: myBlack,
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: null,
+                      icon: Icon(
+                        Icons.arrow_forward,
+                        color: myBlack,
+                      ),
+                    )
+                  ],
                 ),
               ),
               SingleChildScrollView(
@@ -139,9 +157,11 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                       left: 10,
-                                      top: 10,
+                                      top: 8,
                                     ),
                                     child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -153,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ),
                                         const SizedBox(
-                                          height: 2,
+                                          height: 6,
                                         ),
                                         Row(
                                           children: [
@@ -207,6 +227,9 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                             ),
                                           ],
+                                        ),
+                                        const SizedBox(
+                                          height: 6,
                                         ),
                                         Row(
                                           crossAxisAlignment:
@@ -648,14 +671,15 @@ class _HomePageState extends State<HomePage> {
                                 homeOneCards1[index]["title"],
                                 style: TextStyle(
                                   color: myLightGrey,
-                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 13,
                                 ),
                               ),
                               Text(
                                 homeOneCards1[index]["sub-title"],
                                 style: TextStyle(
                                   color: myLightGrey,
-                                  fontSize: 14,
+                                  fontSize: 11,
                                 ),
                               ),
                             ],
@@ -666,6 +690,44 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+
+              // CarouselSlider(
+              //   options: CarouselOptions(
+              //     onPageChanged: (index, reason) {
+              //       setState(() {
+              //         _currentIndex = index; //<-- Page index
+              //       });
+              //     },
+              //   ),
+              //   // items: ,
+              // ),
+              // CarouselSlider(
+              //   options: CarouselOptions(
+              //     enlargeCenterPage: true,
+              //     enableInfiniteScroll: true,
+              //     autoPlay: true,
+              //     // pageSnapping: true,
+              //   ),
+              //   items: listThumbs
+              //       .map(
+              //         (e) => ClipRRect(
+              //           borderRadius: BorderRadius.circular(8),
+              //           child: Stack(
+              //             //fit: StackFit.expand,
+              //             children: <Widget>[
+              //               Image.network(
+              //                 e,
+              //                 width: devWidth - 50,
+              //                 height: 200,
+              //                 fit: BoxFit.cover,
+              //               ),
+              //               // Text(videObj.results[INDEX].name),
+              //             ],
+              //           ),
+              //         ),
+              //       )
+              //       .toList(),
+              // ),
             ],
           ),
         ),
