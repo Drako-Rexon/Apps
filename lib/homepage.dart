@@ -362,7 +362,7 @@ class _HomePageState extends State<HomePage> {
                                   Padding(
                                     padding: const EdgeInsets.only(
                                       left: 10,
-                                      top: 10,
+                                      top: 8,
                                     ),
                                     child: Column(
                                       crossAxisAlignment:
@@ -376,7 +376,7 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ),
                                         const SizedBox(
-                                          height: 2,
+                                          height: 6,
                                         ),
                                         Row(
                                           children: [
@@ -430,6 +430,9 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                             ),
                                           ],
+                                        ),
+                                        const SizedBox(
+                                          height: 6,
                                         ),
                                         Row(
                                           crossAxisAlignment:
@@ -559,7 +562,7 @@ class _HomePageState extends State<HomePage> {
                                     Padding(
                                       padding: const EdgeInsets.only(
                                         left: 10,
-                                        top: 10,
+                                        top: 8,
                                       ),
                                       child: Column(
                                         crossAxisAlignment:
@@ -573,7 +576,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ),
                                           const SizedBox(
-                                            height: 2,
+                                            height: 6,
                                           ),
                                           Row(
                                             children: [
@@ -600,6 +603,9 @@ class _HomePageState extends State<HomePage> {
                                                 ),
                                               ),
                                             ],
+                                          ),
+                                          const SizedBox(
+                                            height: 6,
                                           ),
                                           Row(
                                             crossAxisAlignment:

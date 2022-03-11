@@ -3,7 +3,7 @@ import 'package:play_store_clone/homepage.dart';
 import 'package:play_store_clone/json.dart';
 
 var myWhite = const Color(0xFFFFFFFF);
-var myGrey = const Color(0xFF7c8086);
+var myGrey = Color.fromARGB(255, 124, 127, 133);
 var myGreen = const Color(0xFF49ff49);
 var myPerfectGreen = const Color(0xFF00855e);
 var myBlack = const Color.fromARGB(255, 22, 22, 22);
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
                       color: myWhite,
                       boxShadow: [
                         BoxShadow(
-                          color: myBlack,
+                          color: myGrey,
                           // offset: Offset(1, 1)
                           spreadRadius: 0.2,
                           blurRadius: 0.7,
@@ -87,18 +87,31 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.search,
-                          color: myBlack,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 4,
+                            vertical: 4,
+                          ),
+                          child: Icon(
+                            Icons.search,
+                            color: myBlack,
+                          ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
-                        CircleAvatar(
-                          radius: 10,
-                          // backgroundImage: AssetImage('images/more/avatar.jpeg'),
-                          backgroundColor: myGreen,
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 4,
+                            vertical: 4,
+                          ),
+                          child: CircleAvatar(
+                            radius: 13,
+                            // backgroundImage: AssetImage('images/more/avatar.jpeg'),
+                            backgroundColor: myGreen,
+                          ),
                         ),
                       ],
                     ),
