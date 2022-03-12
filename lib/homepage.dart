@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     double devWidth = MediaQuery.of(context).size.width;
+    double devHeight = MediaQuery.of(context).size.height;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -207,14 +208,13 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             Text(
                                               homeOneCards2[index]["catagory3"],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontSize: 10,
                                               ),
                                             ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 3),
+                                            const Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 3),
                                               child: Icon(
                                                 Icons.circle,
                                                 size: 4,
@@ -222,7 +222,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             Text(
                                               homeOneCards2[index]["mode"],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontSize: 10,
                                               ),
                                             ),
@@ -251,7 +251,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             Text(
                                               homeOneCards2[index]['size'],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontSize: 10,
                                               ),
                                             ),
@@ -283,7 +283,7 @@ class _HomePageState extends State<HomePage> {
                           Icons.headphones,
                           color: myBlack,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Text(
@@ -410,14 +410,13 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             Text(
                                               homeOneCards2[index]["catagory3"],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontSize: 10,
                                               ),
                                             ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 3),
+                                            const Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 3),
                                               child: Icon(
                                                 Icons.circle,
                                                 size: 4,
@@ -425,7 +424,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             Text(
                                               homeOneCards2[index]["mode"],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontSize: 10,
                                               ),
                                             ),
@@ -454,7 +453,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             Text(
                                               homeOneCards2[index]['size'],
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                 fontSize: 10,
                                               ),
                                             ),
@@ -479,15 +478,15 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Ads',
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 6),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6),
                       child: Icon(
                         Icons.circle,
                         size: 4,
@@ -627,7 +626,7 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                               Text(
                                                 homeOneCards2[index]['size'],
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                   fontSize: 10,
                                                 ),
                                               ),
@@ -734,6 +733,144 @@ class _HomePageState extends State<HomePage> {
               //       )
               //       .toList(),
               // ),
+              // ! here is the code for card type 2
+
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 25,
+                  right: 25,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Limited offer for you',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                        color: myBlack,
+                      ),
+                    ),
+                    Icon(Icons.arrow_forward),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 25,
+                  top: 25,
+                  bottom: 20,
+                ),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: myWhite,
+                    boxShadow: [
+                      BoxShadow(
+                        color: myBlack,
+                        blurRadius: 1,
+                        spreadRadius: 1.5,
+                        blurStyle: BlurStyle.outer,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    border: Border.all(
+                      color: myGrey,
+                      width: 1.5,
+                      style: BorderStyle.solid,
+                    ),
+                  ),
+                  height: devHeight * 0.42,
+                  width: devWidth - 60,
+                  child: Column(children: [
+                    Container(
+                      height: devHeight * 0.2,
+                      width: devWidth - 60,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(16),
+                          topLeft: Radius.circular(16),
+                        ),
+                        image: DecorationImage(
+                          image: AssetImage('images/more/coc_cover.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 18,
+                        top: 20,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                homeOneCards2[0]['title'],
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: myGrey,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              const Icon(
+                                Icons.circle,
+                                size: 4,
+                              ),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              Text(
+                                'Ends on date',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: myGrey,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          const Text('Rs. 40 Google Play discount'),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Text(
+                            'Terms apply',
+                            style: TextStyle(
+                              color: myGrey,
+                              fontSize: 13,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              padding:
+                                  MaterialStateProperty.all(EdgeInsets.zero),
+                              backgroundColor: MaterialStateProperty.all(
+                                  const Color.fromARGB(0, 255, 255, 255)),
+                            ),
+                            onPressed: null,
+                            child: Text(
+                              'Save offer',
+                              style: TextStyle(
+                                color: myGreen,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                    // RaisedButton(onPressed: null)
+                  ]),
+                ),
+              )
             ],
           ),
         ),

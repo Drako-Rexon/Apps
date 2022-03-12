@@ -3,7 +3,7 @@ import 'package:play_store_clone/homepage.dart';
 import 'package:play_store_clone/json.dart';
 
 var myWhite = const Color(0xFFFFFFFF);
-var myGrey = Color.fromARGB(255, 124, 127, 133);
+var myGrey = const Color.fromARGB(255, 124, 127, 133);
 var myGreen = const Color(0xFF49ff49);
 var myPerfectGreen = const Color(0xFF00855e);
 var myBlack = const Color.fromARGB(255, 22, 22, 22);
@@ -15,8 +15,8 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: 'Play Store',
       theme: ThemeData(
-        primaryColor: Colors.blue,
-        primarySwatch: Colors.brown,
+        primaryColor: Color.fromARGB(1, 255, 70, 126),
+        // primarySwatch: Color.fromARGB(1, 255, 70, 126),
       ),
       home: const Home(),
     ),
@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
                           blurRadius: 0.7,
                         ),
                       ],
-                      borderRadius: BorderRadius.all(
+                      borderRadius: const BorderRadius.all(
                         Radius.circular(3),
                       ),
                       border: Border.all(
@@ -91,7 +91,7 @@ class _HomeState extends State<Home> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 4,
+                            horizontal: 10,
                             vertical: 4,
                           ),
                           child: Icon(
@@ -99,17 +99,36 @@ class _HomeState extends State<Home> {
                             color: myBlack,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
+                        ),
+                        SizedBox(
+                          width: devWidth - 165,
+                          child: TextField(
+                            onChanged: (value) {},
+                            decoration: const InputDecoration(
+                              hintText: 'Search here',
+                              hintMaxLines: 1,
+                              contentPadding: EdgeInsets.symmetric(),
+                              border: OutlineInputBorder(),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide.none,
+                              ),
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                            horizontal: 4,
+                            horizontal: 8,
                             vertical: 4,
                           ),
                           child: CircleAvatar(
-                            radius: 13,
-                            // backgroundImage: AssetImage('images/more/avatar.jpeg'),
+                            radius: 16,
+                            backgroundImage:
+                                AssetImage('images/more/avatar.jpeg'),
                             backgroundColor: myGreen,
                           ),
                         ),
