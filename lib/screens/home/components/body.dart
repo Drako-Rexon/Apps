@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/home/components/featured_plant.dart';
 import 'package:plant_app/screens/home/components/header_with_search.dart';
 import 'package:plant_app/screens/home/components/recomended.dart';
@@ -17,17 +18,8 @@ class Body extends StatelessWidget {
           titleWithMore(title: 'Recomended', press: () {}),
           recomendedPlants(),
           titleWithMore(title: 'Featured', press: () {}),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                featuredPlantsCard(
-                    image: "assets/images/bottom_img_1.png", press: () {}),
-                featuredPlantsCard(
-                    image: "assets/images/bottom_img_2.png", press: () {}),
-              ],
-            ),
-          ),
+          featuredPlants(),
+          SizedBox(height: kDefaultPadding)
         ],
       ),
     );

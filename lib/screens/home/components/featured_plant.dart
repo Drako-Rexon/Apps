@@ -1,6 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
 
+class featuredPlants extends StatelessWidget {
+  const featuredPlants({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          featuredPlantsCard(
+              image: "assets/images/bottom_img_1.png", press: () {}),
+          featuredPlantsCard(
+              image: "assets/images/bottom_img_2.png", press: () {}),
+        ],
+      ),
+    );
+  }
+}
+
 class featuredPlantsCard extends StatelessWidget {
   const featuredPlantsCard({
     Key? key,
