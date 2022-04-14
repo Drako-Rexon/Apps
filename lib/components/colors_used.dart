@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class AppColors {
-  static final Color gradient1 = const Color(0xFFE45171);
-  static final Color gradient2 = const Color(0xFFA861BD);
-  static final Color gradient3 = const Color(0xFF1A3263);
-  static final Color textColor = const Color(0xFF242424);
+  static final HexColor gradient1 =  HexColor("#E45171");
+  static final HexColor gradient2 =  HexColor("#A861BD");
+  static final HexColor gradient3 =  HexColor("#1A3263");
+  static final HexColor textColor =  HexColor("#242424");
   static final Color lightergrey = Colors.grey.shade300;
   static final Color lightGrey = Colors.grey.shade500;
-  static final Color enableBorder = Color(0xFFE45171);
+  static final HexColor enableBorder = HexColor("#E45171");
 }

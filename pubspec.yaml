@@ -40,6 +40,9 @@ dependencies:
   dio: ^4.0.6
   dotted_border: ^2.0.0+2
   image_picker: ^0.8.5
+  feather_icons: ^1.2.0
+  dropdownfield2: ^1.0.6
+  hexcolor: ^2.0.6
 
 dev_dependencies:
   flutter_test:

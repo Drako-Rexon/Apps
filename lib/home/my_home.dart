@@ -1,13 +1,20 @@
 import 'dart:convert';
 import 'dart:core';
+import 'package:dropdownfield2/dropdownfield2.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+
+// ! The below are the packages of app for widgets
 import 'package:salon/components/colors_used.dart';
 import 'package:salon/home/components/big_card.dart';
 import 'package:salon/home/components/bottom_nav_bar.dart';
 import 'package:salon/home/components/card_heading.dart';
-import 'package:salon/home/components/input_field.dart';
+import 'package:salon/home/components/input_conf_pass.dart';
+import 'package:salon/home/components/input_dob.dart';
+import 'package:salon/home/components/input_email.dart';
+import 'package:salon/home/components/input_fname.dart';
+import 'package:salon/home/components/input_pass.dart';
 import 'package:salon/home/components/nav_container.dart';
-import 'package:http/http.dart' as http;
 import 'package:salon/home/components/small_card.dart';
 import 'package:salon/home/components/upload_image.dart';
 
@@ -21,9 +28,10 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  // String itemCount;
-  // String responseString;
+  String defGender = "";
+  List<String> selectGender = ["Male", "Female"];
   Map responseMap = {"test": "pass"};
+  final genderSelected = TextEditingController();
   Future apiCallHttp() async {
     http.Response responseGet;
     responseGet =
@@ -79,7 +87,7 @@ class _MyHomeState extends State<MyHome> {
       "Message",
       "Account",
     ];
-    Size devSize = MediaQuery.of(context).size;
+    var devSize = MediaQuery.of(context).size;
     int show = 0;
     return SafeArea(
       child: Scaffold(
@@ -112,13 +120,50 @@ class _MyHomeState extends State<MyHome> {
               ),
               // From Here the form has started
               UploadImage(),
-
-              InputField(
+              InputFieldFName(
                 title: "Full Name",
               ),
-              InputField(
+              InputFieldEMail(
                 title: "Email ID",
               ),
+              InputFieldCPass(
+                title: "Create Password",
+                obs: true,
+              ),
+              InputFieldConfPass(
+                title: "Confirm Password",
+                obs: true,
+              ),
+
+              Container(
+                margin: EdgeInsets.only(top: 10, bottom: 20),
+                width: (devSize.width - 60),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                    border: Border.all(
+                      width: 2,
+                      color: AppColors.lightGrey,
+                    )),
+                child: DropDownField(
+                  controller: genderSelected,
+                  hintText: "Select Gender",
+                  enabled: true,
+                  itemsVisibleInDropdown: 2,
+                  items: selectGender,
+                  
+                  hintStyle: TextStyle(
+                    fontFamily: 'PoppinsReg',
+                    color: AppColors.lightGrey,
+                    fontSize: 15,
+                  ),
+                  onValueChanged: (value) {
+                    setState(() {
+                      defGender = value;
+                    });
+                  },
+                ),
+              ),
+              InputFieldDoB(title: 'Date of Birth'),
             ],
           ),
         ),
@@ -130,4 +175,3 @@ class _MyHomeState extends State<MyHome> {
     );
   }
 }
-

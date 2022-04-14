@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:salon/components/colors_used.dart';
 import 'package:salon/home/my_home.dart';
 
-class InputField extends StatelessWidget {
-  const InputField({
+class InputFieldConfPass extends StatelessWidget {
+  InputFieldConfPass({
     Key? key,
     required this.title,
     this.keyBType = TextInputType.name,
@@ -12,6 +12,7 @@ class InputField extends StatelessWidget {
   final String title;
   final bool obs;
   final keyBType;
+  bool _secureText = true;
   @override
   Widget build(BuildContext context) {
     Size devSize = MediaQuery.of(context).size;
@@ -25,9 +26,19 @@ class InputField extends StatelessWidget {
         width: devSize.width - 60,
         child: TextField(
           onChanged: ((value) {
-            fName = value;
+            confPass = value;
           }),
           decoration: InputDecoration(
+            suffixIcon: IconButton(
+              icon: Icon(_secureText
+                  ? Icons.remove_red_eye_outlined
+                  : Icons.no_encryption_outlined),
+              onPressed: () {
+                // setState(() {
+                //   _secureText = !_secureText;
+                // });
+              },
+            ),
             hintText: title,
             contentPadding: EdgeInsets.only(
               left: 20,
@@ -54,7 +65,7 @@ class InputField extends StatelessWidget {
           keyboardType: keyBType,
           style: TextStyle(
             fontFamily: 'PoppinsReg',
-            color: AppColors.lightergrey,
+            color: AppColors.textColor,
           ),
         ),
       ),
