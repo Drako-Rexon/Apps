@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:salon/components/colors_used.dart';
 import 'package:salon/components/json_used.dart';
@@ -6,13 +5,11 @@ import 'package:salon/components/json_used.dart';
 class BigCardWidget extends StatelessWidget {
   const BigCardWidget({
     Key? key,
-    required this.devSize,
   }) : super(key: key);
-
-  final Size devSize;
 
   @override
   Widget build(BuildContext context) {
+    Size devSize = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Row(
@@ -41,12 +38,10 @@ class BigCardWidget extends StatelessWidget {
                   margin: EdgeInsets.only(bottom: 5),
                   width: (devSize.width * 0.6) - 20,
                   decoration: BoxDecoration(
-                    borderRadius:
-                        BorderRadius.all(Radius.circular(8)),
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage(
-                          'assets/images/pic${index}.png'),
+                      image: AssetImage('assets/images/pic${index}.png'),
                     ),
                   ),
                 ), // ! This is for image in the card
@@ -72,15 +67,13 @@ class BigCardWidget extends StatelessWidget {
                       ),
                     ),
                     Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(top: 5),
                           child: Row(
                             children: List.generate(
-                                bigCardData[index]['rating'],
-                                (index1) {
+                                bigCardData[index]['rating'], (index1) {
                               return Icon(
                                 Icons.star,
                                 color: Colors.yellow.shade500,
