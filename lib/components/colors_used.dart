@@ -5,4 +5,6 @@ class AppColors {
   static final Color gradient2 = const Color(0xFFA861BD);
   static final Color gradient3 = const Color(0xFF1A3263);
   static final Color textColor = const Color(0xFF242424);
+  static final Color lightergrey = Colors.grey.shade300;
+  static final Color lightGrey = Colors.grey.shade500;
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:salon/components/colors_used.dart';
+import 'package:salon/components/json_used.dart';
+import 'package:salon/home/components/big_card.dart';
 import 'package:salon/home/components/bottom_nav_bar.dart';
+import 'package:salon/home/components/card_heading.dart';
 import 'package:salon/home/components/nav_container.dart';
 
 class MyHome extends StatefulWidget {
@@ -27,34 +30,18 @@ class _MyHomeState extends State<MyHome> {
       "Message",
       "Account",
     ];
+    Size devSize = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
           child: Column(
             children: [
               NavConatiner(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Highest Reated',
-                    style: TextStyle(
-                      color: AppColors.gradient3,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  FlatButton(
-                    onPressed: null,
-                    child: Text(
-                      'View all',
-                      style: TextStyle(
-                          fontFamily: 'Adobe Clean',
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.gradient3),
-                    ),
-                  ),
-                ],
-              ),
+              CardHeading(title: 'Highest Rated'),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: BigCardWidget(devSize: devSize),
+              )
             ],
           ),
         ),

@@ -17,10 +17,16 @@ class _NavConatinerState extends State<NavConatiner> {
   Widget build(BuildContext context) {
     // String defLocation = "Choose your location";
 
-    var dropDownItems = ["Dwarka", "Uttam Nagar", "Laxmi Nagar", "South Ex"];
+    var dropDownItems = [
+      "Choose your location",
+      "Dwarka",
+      "Uttam Nagar",
+      "Laxmi Nagar",
+      "South Ex"
+    ];
 
     Size size = MediaQuery.of(context).size;
-    String dropdownValue = 'Dwarka';
+    String dropdownValue = 'Choose your location';
 
     return Container(
       padding: EdgeInsets.only(
@@ -46,8 +52,8 @@ class _NavConatinerState extends State<NavConatiner> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               IconButton(
-                icon: SvgPicture.asset(
-                  'assets/images/LNC.svg',
+                icon: Image.asset(
+                  'assets/images/Logo.png',
                   // height: 50,
                   // width: 100,
                   color: Colors.white,
@@ -59,19 +65,20 @@ class _NavConatinerState extends State<NavConatiner> {
                 icon: FaIcon(
                   FontAwesomeIcons.solidBell,
                   color: Colors.white,
+                  size: 20,
                 ),
               ),
             ],
           ), // ! this is for the first row of navigation top
           Padding(
-            padding: const EdgeInsets.only(left:5),
+            padding: const EdgeInsets.only(left: 5),
             child: Row(
               children: [
                 Text(
                   'Pikashi Jain',
                   style: TextStyle(
                     color: Colors.white,
-                    fontFamily: 'Adobe Clean',
+                    fontFamily: 'PoppinsReg',
                     fontWeight: FontWeight.w100,
                     fontSize: 20,
                   ),
@@ -95,19 +102,20 @@ class _NavConatinerState extends State<NavConatiner> {
                   focusColor: Colors.black,
                   // elevation: 16,
                   style: const TextStyle(
-                      color: Colors.grey), // TODO this need to improve
+                      color: Colors.grey,
+                      fontFamily: 'PoppinsReg'), // TODO this need to improve
                   underline: Container(height: 0),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownValue = newValue!;
-                    });
-                  },
                   items: dropDownItems.map((String item) {
                     return DropdownMenuItem(
                       value: item,
                       child: Text(item),
                     );
                   }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      dropdownValue = newValue!;
+                    });
+                  },
                 ),
               ),
             ],
@@ -117,7 +125,6 @@ class _NavConatinerState extends State<NavConatiner> {
     );
   }
 }
-
 
 class RadiantGradientMask extends StatelessWidget {
   RadiantGradientMask({required this.child});
@@ -130,10 +137,7 @@ class RadiantGradientMask extends StatelessWidget {
         return RadialGradient(
           center: Alignment.bottomLeft,
           radius: 0.5,
-          colors: <Color>[
-            Colors.purple,
-            Colors.amberAccent
-          ],
+          colors: <Color>[Colors.purple, Colors.amberAccent],
           tileMode: TileMode.mirror,
         ).createShader(bounds);
       },
