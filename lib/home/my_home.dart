@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:core';
-import 'package:dropdownfield2/dropdownfield2.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
@@ -13,12 +12,19 @@ import 'package:salon/home/components/input_conf_pass.dart';
 import 'package:salon/home/components/input_dob.dart';
 import 'package:salon/home/components/input_email.dart';
 import 'package:salon/home/components/input_fname.dart';
+import 'package:salon/home/components/input_gender.dart';
 import 'package:salon/home/components/input_pass.dart';
 import 'package:salon/home/components/nav_container.dart';
+import 'package:salon/home/components/radio_buttons.dart';
 import 'package:salon/home/components/small_card.dart';
+import 'package:salon/home/components/submit_button.dart';
 import 'package:salon/home/components/upload_image.dart';
 
 String? fName, eMail, pass, confPass, gender;
+
+String defGender = "";
+List<String> selectGender = ["Male", "Female"];
+final genderSelected = TextEditingController();
 
 class MyHome extends StatefulWidget {
   const MyHome({Key? key}) : super(key: key);
@@ -28,42 +34,23 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  String defGender = "";
-  List<String> selectGender = ["Male", "Female"];
-  Map responseMap = {"test": "pass"};
-  final genderSelected = TextEditingController();
+  Map? responseMap;
+
+  // ! This is for fething the data from API
   Future apiCallHttp() async {
-    http.Response responseGet;
-    responseGet =
+    http.Response httpResponse =
         await http.get(Uri.parse('https://anaajapp.com/api/categories'));
-    if (responseGet.statusCode == 200) {
+    if (httpResponse.statusCode == 200) {
       setState(() {
-        // responseString = responseGet.body;
-        responseMap = json.decode(responseGet.body);
+        responseMap = json.decode(httpResponse.body);
       });
-      // print(responseString);
     } else {
-      print(responseGet.statusCode);
-      // responseString = 'No response form API';
+      print(httpResponse.statusCode);
     }
-    // var response = await http.get(Uri.https('anaajapp.com', '/api/categories'));
-    // if (response.statusCode == 200) {
-    //   var jsonResponse = jsonDecode(response.body) as Map<String, dynamic>;
-    //   itemCount = jsonResponse['message'];
-    //   print('Number of books about http: $itemCount.');
-    // } else {
-    //   print('Request failed with status: ${response.statusCode}.');
-    // }
+    if (responseMap == null) {
+      return;
+    }
   }
-  // var response ='';
-  // void apiCallHttp() async {
-  //   try {
-  //     response = await Dio().get('https://anaajapp.com/api/categories');
-  //     print(response);
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
 
   @override
   void initState() {
@@ -100,24 +87,17 @@ class _MyHomeState extends State<MyHome> {
                 scrollDirection: Axis.horizontal,
                 child: BigCardWidget(),
               ),
-              CardHeading(title: 'Services'),
+              CardHeading(title: 'Services (API used)'),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: SmallCard(),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 30,
-                  bottom: 30,
-                  left: 24,
-                  right: 24,
-                ),
-                child: Divider(
-                  thickness: 2,
-                  height: 2,
-                  color: AppColors.lightergrey,
-                ),
-              ),
+                  padding: const EdgeInsets.only(
+                      top: 30, bottom: 30, left: 24, right: 24),
+                  child: Divider(
+                      thickness: 2, height: 2, color: AppColors.lightergrey)),
+                      
               // From Here the form has started
               UploadImage(),
               InputFieldFName(
@@ -128,42 +108,15 @@ class _MyHomeState extends State<MyHome> {
               ),
               InputFieldCPass(
                 title: "Create Password",
-                obs: true,
               ),
               InputFieldConfPass(
                 title: "Confirm Password",
-                obs: true,
               ),
-
-              Container(
-                margin: EdgeInsets.only(top: 10, bottom: 20),
-                width: (devSize.width - 60),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                    border: Border.all(
-                      width: 2,
-                      color: AppColors.lightGrey,
-                    )),
-                child: DropDownField(
-                  controller: genderSelected,
-                  hintText: "Select Gender",
-                  enabled: true,
-                  itemsVisibleInDropdown: 2,
-                  items: selectGender,
-                  
-                  hintStyle: TextStyle(
-                    fontFamily: 'PoppinsReg',
-                    color: AppColors.lightGrey,
-                    fontSize: 15,
-                  ),
-                  onValueChanged: (value) {
-                    setState(() {
-                      defGender = value;
-                    });
-                  },
-                ),
-              ),
+              InputGender(),
               InputFieldDoB(title: 'Date of Birth'),
+              RodioButtons(),
+              SubmitButton(devSize: devSize),
+              // Text(),
             ],
           ),
         ),

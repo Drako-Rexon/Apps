@@ -10,13 +10,13 @@ class UploadImage extends StatelessWidget {
   UploadImage({
     Key? key,
   }) : super(key: key);
-
   File? image;
+
   Future pickImage() async {
     try {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (image == null) return;
-      final imageTemp = File(image.path);
+      // if (image == null) return;
+      final imageTemp = File(image!.path);
       setState(() => this.image = imageTemp);
     } on PlatformException catch (e) {
       print('Failed to load image: $e');

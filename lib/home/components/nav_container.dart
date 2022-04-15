@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:salon/components/colors_used.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class NavConatiner extends StatefulWidget {
   const NavConatiner({
@@ -51,14 +50,15 @@ class _NavConatinerState extends State<NavConatiner> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                icon: Image.asset(
-                  'assets/images/Logo.png',
-                  // height: 50,
-                  // width: 100,
-                  color: Colors.white,
+              Container(
+                height: 14,
+                width: 160,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/Logo.png'),
+                    fit: BoxFit.fill,
+                  ),
                 ),
-                onPressed: () {},
               ),
               IconButton(
                 onPressed: () {},

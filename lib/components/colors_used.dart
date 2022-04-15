@@ -9,4 +9,5 @@ class AppColors {
   static final Color lightergrey = Colors.grey.shade300;
   static final Color lightGrey = Colors.grey.shade500;
   static final HexColor enableBorder = HexColor("#E45171");
+  static final HexColor submitColor = HexColor("#1D2677");
 }

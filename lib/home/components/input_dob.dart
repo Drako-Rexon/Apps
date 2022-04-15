@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:salon/components/colors_used.dart';
 import 'package:salon/home/my_home.dart';
 
-class InputFieldDoB extends StatelessWidget {
+class InputFieldDoB extends StatefulWidget {
   InputFieldDoB({
     Key? key,
     required this.title,
@@ -13,31 +13,21 @@ class InputFieldDoB extends StatelessWidget {
   final String title;
   final bool obs;
   final keyBType;
+
+  @override
+  State<InputFieldDoB> createState() => _InputFieldDoBState();
+}
+
+class _InputFieldDoBState extends State<InputFieldDoB> {
   bool secureText = true;
+
   @override
   Widget build(BuildContext context) {
     var devSize = MediaQuery.of(context).size;
-    DateTime selectedDate = DateTime.now();
-
-    _selectDate(BuildContext context) async {
-      final DateTime? selected = await showDatePicker(
-        context: context,
-        initialDate: selectedDate,
-        firstDate: DateTime(1970),
-        lastDate: DateTime(2022),
-      );
-      if (selected != null && selected != selectedDate) {
-        // setState(() {
-        //   selectedDate = selected;
-        // });
-      }
-    }
+    DateTime _dobTime;
 
     return Padding(
-      padding: const EdgeInsets.only(
-        top: 10,
-        bottom: 20,
-      ),
+      padding: const EdgeInsets.only(top: 10, bottom: 20),
       child: SizedBox(
         width: devSize.width - 60,
         child: TextField(
@@ -51,10 +41,19 @@ class InputFieldDoB extends StatelessWidget {
                 color: AppColors.textColor,
               ),
               onPressed: () {
-                _selectDate(context);
+                showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(1970),
+                  lastDate: DateTime(2022),
+                ).then((value) {
+                  setState(() {
+                    _dobTime = value!;
+                  });
+                });
               },
             ),
-            hintText: title,
+            hintText: widget.title,
             contentPadding: EdgeInsets.only(
               left: 20,
               right: 20,
@@ -76,61 +75,14 @@ class InputFieldDoB extends StatelessWidget {
             ),
           ),
           maxLines: 1,
-          obscureText: obs,
-          keyboardType: keyBType,
+          obscureText: widget.obs,
+          keyboardType: widget.keyBType,
           style: TextStyle(
             fontFamily: 'PoppinsReg',
             color: AppColors.textColor,
           ),
         ),
       ),
-    );
-  }
-}
-
-class AppDropdownInput<T> extends StatelessWidget {
-  final String hintText;
-  final List<T> options;
-  final T value;
-  final String Function(T) getLabel;
-  final void Function(T) onChanged;
-
-  AppDropdownInput({
-    this.hintText = 'Please select an Option',
-    this.options = const [],
-    required this.getLabel,
-    required this.value,
-    required this.onChanged,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return FormField<T>(
-      builder: (FormFieldState<T> state) {
-        return InputDecorator(
-          decoration: InputDecoration(
-            contentPadding:
-                EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-            labelText: hintText,
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(5.0)),
-          ),
-          isEmpty: value == null || value == '',
-          child: DropdownButtonHideUnderline(
-            child: DropdownButton<T>(
-              value: value,
-              isDense: true,
-              onChanged: null,
-              items: options.map((T value) {
-                return DropdownMenuItem<T>(
-                  value: value,
-                  child: Text(getLabel(value)),
-                );
-              }).toList(),
-            ),
-          ),
-        );
-      },
     );
   }
 }

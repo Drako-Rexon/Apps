@@ -1,18 +1,25 @@
+import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:salon/components/colors_used.dart';
 import 'package:salon/home/my_home.dart';
 
-class InputFieldConfPass extends StatelessWidget {
+class InputFieldConfPass extends StatefulWidget {
   InputFieldConfPass({
     Key? key,
     required this.title,
     this.keyBType = TextInputType.name,
-    this.obs = false,
   }) : super(key: key);
   final String title;
-  final bool obs;
   final keyBType;
+
+  @override
+  State<InputFieldConfPass> createState() => _InputFieldConfPassState();
+}
+
+class _InputFieldConfPassState extends State<InputFieldConfPass> {
+  bool _obs = true;
   bool _secureText = true;
+
   @override
   Widget build(BuildContext context) {
     Size devSize = MediaQuery.of(context).size;
@@ -30,16 +37,19 @@ class InputFieldConfPass extends StatelessWidget {
           }),
           decoration: InputDecoration(
             suffixIcon: IconButton(
-              icon: Icon(_secureText
-                  ? Icons.remove_red_eye_outlined
-                  : Icons.no_encryption_outlined),
+              icon: Icon(_secureText ? FeatherIcons.eyeOff : FeatherIcons.eye),
               onPressed: () {
-                // setState(() {
-                //   _secureText = !_secureText;
-                // });
+                setState(() {
+                  _secureText = !_secureText;
+                  if (!_secureText) {
+                    _obs = true;
+                  } else {
+                    _obs = false;
+                  }
+                });
               },
             ),
-            hintText: title,
+            hintText: widget.title,
             contentPadding: EdgeInsets.only(
               left: 20,
               right: 20,
@@ -61,8 +71,8 @@ class InputFieldConfPass extends StatelessWidget {
             ),
           ),
           maxLines: 1,
-          obscureText: obs,
-          keyboardType: keyBType,
+          obscureText: _obs,
+          keyboardType: widget.keyBType,
           style: TextStyle(
             fontFamily: 'PoppinsReg',
             color: AppColors.textColor,

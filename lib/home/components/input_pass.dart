@@ -3,17 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:salon/components/colors_used.dart';
 import 'package:salon/home/my_home.dart';
 
-class InputFieldCPass extends StatelessWidget {
+class InputFieldCPass extends StatefulWidget {
   InputFieldCPass({
     Key? key,
     required this.title,
     this.keyBType = TextInputType.name,
-    this.obs = false,
   }) : super(key: key);
   final String title;
-  final bool obs;
   final keyBType;
+
+  @override
+  State<InputFieldCPass> createState() => _InputFieldCPassState();
+}
+
+class _InputFieldCPassState extends State<InputFieldCPass> {
   bool _secureText = true;
+  bool _obs = true;
+
   @override
   Widget build(BuildContext context) {
     var devSize = MediaQuery.of(context).size;
@@ -31,16 +37,19 @@ class InputFieldCPass extends StatelessWidget {
           }),
           decoration: InputDecoration(
             suffixIcon: IconButton(
-              icon: Icon(_secureText
-                  ? FeatherIcons.eyeOff
-                  : FeatherIcons.eyeOff),
+              icon: Icon(_secureText ? FeatherIcons.eyeOff : FeatherIcons.eye),
               onPressed: () {
-                // setState(() {
-                //   _secureText = !_secureText;
-                // });
+                setState(() {
+                  _secureText = !_secureText;
+                  if (!_secureText) {
+                    _obs = true;
+                  } else {
+                    _obs = false;
+                  }
+                });
               },
             ),
-            hintText: title,
+            hintText: widget.title,
             contentPadding: EdgeInsets.only(
               left: 20,
               right: 20,
@@ -62,8 +71,8 @@ class InputFieldCPass extends StatelessWidget {
             ),
           ),
           maxLines: 1,
-          obscureText: obs,
-          keyboardType: keyBType,
+          obscureText: _obs,
+          keyboardType: widget.keyBType,
           style: TextStyle(
             fontFamily: 'PoppinsReg',
             color: AppColors.textColor,
