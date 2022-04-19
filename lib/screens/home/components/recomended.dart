@@ -15,7 +15,7 @@ class recomendedPlants extends StatelessWidget {
         children: [
           plantCard(
             image: 'assets/images/image_1.png',
-            country: "russia",
+            country: "russia (tap here)",
             price: 440,
             press: () {
               Navigator.push(
@@ -29,7 +29,7 @@ class recomendedPlants extends StatelessWidget {
           ),
           plantCard(
             image: 'assets/images/image_2.png',
-            country: "russia",
+            country: "russia (tap here)",
             price: 440,
             press: () {Navigator.push(
                 context,
@@ -41,7 +41,7 @@ class recomendedPlants extends StatelessWidget {
           ),
           plantCard(
             image: 'assets/images/image_3.png',
-            country: "russia",
+            country: "russia (tap here)",
             price: 440,
             press: () {Navigator.push(
                 context,
@@ -53,7 +53,7 @@ class recomendedPlants extends StatelessWidget {
           ),
           plantCard(
             image: 'assets/images/image_1.png',
-            country: "russia",
+            country: "russia (tap here)",
             price: 440,
             press: () {Navigator.push(
                 context,
