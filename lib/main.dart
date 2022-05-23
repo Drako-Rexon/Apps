@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:play_store_clone/homepage.dart';
-import 'package:play_store_clone/json.dart';
-
-var myWhite = const Color(0xFFFFFFFF);
-var myGrey = const Color.fromARGB(255, 124, 127, 133);
-var myGreen = const Color(0xFF49ff49);
-var myPerfectGreen = const Color(0xFF00855e);
-var myBlack = const Color.fromARGB(255, 22, 22, 22);
-var myLightGrey = const Color(0xFFefeff0);
+import 'package:play_store_clone/components/json.dart';
+import 'components/standard_colors.dart';
 
 void main() {
   runApp(
@@ -15,24 +9,24 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: 'Play Store',
       theme: ThemeData(
-        primaryColor: Color.fromARGB(1, 255, 70, 126),
+        primaryColor: const Color.fromARGB(1, 255, 70, 126),
         // primarySwatch: Color.fromARGB(1, 255, 70, 126),
       ),
-      home: const Home(),
+      home: const HomePage(),
     ),
   );
 }
 
 // * The below code is for the home
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class HomePagePlayStore extends StatefulWidget {
+  const HomePagePlayStore({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomePagePlayStore> createState() => _HomePagePlayStoreState();
 }
 
-class _HomeState extends State<Home> {
+class _HomePagePlayStoreState extends State<HomePagePlayStore> {
   List navIcons = [
     Icons.gamepad,
     Icons.apps,
@@ -52,10 +46,10 @@ class _HomeState extends State<Home> {
     double devWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: 120,
         titleSpacing: 0,
         elevation: 4,
-        backgroundColor: myWhite,
+        backgroundColor: UsedColors.myWhite,
         title: SafeArea(
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,10 +62,10 @@ class _HomeState extends State<Home> {
                   Container(
                     width: devWidth - 60,
                     decoration: BoxDecoration(
-                      color: myWhite,
+                      color: UsedColors.myWhite,
                       boxShadow: [
                         BoxShadow(
-                          color: myGrey,
+                          color: UsedColors.myGrey,
                           // offset: Offset(1, 1)
                           spreadRadius: 0.2,
                           blurRadius: 0.7,
@@ -81,7 +75,7 @@ class _HomeState extends State<Home> {
                         Radius.circular(3),
                       ),
                       border: Border.all(
-                        color: myLightGrey,
+                        color: UsedColors.myLightGrey,
                         width: 1,
                         style: BorderStyle.solid,
                       ),
@@ -96,7 +90,7 @@ class _HomeState extends State<Home> {
                           ),
                           child: Icon(
                             Icons.search,
-                            color: myBlack,
+                            color: UsedColors.myBlack,
                           ),
                         ),
                         const SizedBox(
@@ -128,8 +122,8 @@ class _HomeState extends State<Home> {
                           child: CircleAvatar(
                             radius: 16,
                             backgroundImage:
-                                AssetImage('images/more/avatar.jpeg'),
-                            backgroundColor: myGreen,
+                                const AssetImage('images/more/avatar.jpeg'),
+                            backgroundColor: UsedColors.myGreen,
                           ),
                         ),
                       ],
@@ -150,7 +144,7 @@ class _HomeState extends State<Home> {
                       child: Text(
                         catagoryNav[index],
                         style: TextStyle(
-                          color: myBlack,
+                          color: UsedColors.myBlack,
                           fontSize: 12,
                         ),
                       ),
@@ -197,7 +191,7 @@ class _HomeState extends State<Home> {
       width: devWidth,
       height: 74,
       decoration: BoxDecoration(
-        color: myWhite,
+        color: UsedColors.myWhite,
         boxShadow: const [
           BoxShadow(
             color: Colors.black,
@@ -216,7 +210,7 @@ class _HomeState extends State<Home> {
             return Column(
               children: [
                 IconButton(
-                  color: activeTab == index ? myPerfectGreen : myGrey,
+                  color: activeTab == index ? UsedColors.myPerfectGreen : UsedColors.myGrey,
                   onPressed: () {
                     setState(() {
                       activeTab = index;
@@ -229,7 +223,7 @@ class _HomeState extends State<Home> {
                 Text(
                   navText[index],
                   style: TextStyle(
-                    color: activeTab == index ? myPerfectGreen : myGrey,
+                    color: activeTab == index ? UsedColors.myPerfectGreen : UsedColors.myGrey,
                     fontSize: 12,
                   ),
                 ),

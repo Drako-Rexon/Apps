@@ -1,7 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:play_store_clone/main.dart';
-import 'json.dart';
+import 'package:play_store_clone/components/standard_colors.dart';
+import 'components/json.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -27,7 +26,10 @@ class _HomePageState extends State<HomePage> {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 13),
+                  padding: const EdgeInsets.only(
+                    left: 13,
+                    right: 13,
+                  ),
                   child: Row(
                     children: List.generate(homeOneCards1.length, (index) {
                       return Padding(
@@ -53,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 homeOneCards1[index]["title"],
                                 style: TextStyle(
-                                  color: myLightGrey,
+                                  color: UsedColors.myLightGrey,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13,
                                 ),
@@ -61,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 homeOneCards1[index]["sub-title"],
                                 style: TextStyle(
-                                  color: myLightGrey,
+                                  color: UsedColors.myLightGrey,
                                   fontSize: 11,
                                 ),
                               ),
@@ -86,14 +88,14 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: myBlack,
+                        color: UsedColors.myBlack,
                       ),
                     ),
                     IconButton(
                       onPressed: null,
                       icon: Icon(
                         Icons.arrow_forward,
-                        color: myBlack,
+                        color: UsedColors.myBlack,
                       ),
                     )
                   ],
@@ -228,9 +230,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ],
                                         ),
-                                        const SizedBox(
-                                          height: 6,
-                                        ),
+                                        const SizedBox(height: 6),
                                         Row(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
@@ -281,7 +281,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Icon(
                           Icons.headphones,
-                          color: myBlack,
+                          color: UsedColors.myBlack,
                         ),
                         const SizedBox(
                           width: 10,
@@ -291,14 +291,14 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 18,
-                            color: myBlack,
+                            color: UsedColors.myBlack,
                           ),
                         ),
                       ],
                     ),
                     Icon(
                       Icons.arrow_forward,
-                      color: myGrey,
+                      color: UsedColors.myGrey,
                     )
                   ],
                 ),
@@ -497,7 +497,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: myBlack,
+                        color: UsedColors.myBlack,
                       ),
                     ),
                   ],
@@ -675,7 +675,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 homeOneCards1[index]["title"],
                                 style: TextStyle(
-                                  color: myLightGrey,
+                                  color: UsedColors.myLightGrey,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 13,
                                 ),
@@ -683,7 +683,7 @@ class _HomePageState extends State<HomePage> {
                               Text(
                                 homeOneCards1[index]["sub-title"],
                                 style: TextStyle(
-                                  color: myLightGrey,
+                                  color: UsedColors.myLightGrey,
                                   fontSize: 11,
                                 ),
                               ),
@@ -748,7 +748,7 @@ class _HomePageState extends State<HomePage> {
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         fontSize: 18,
-                        color: myBlack,
+                        color: UsedColors.myBlack,
                       ),
                     ),
                     Icon(Icons.arrow_forward),
@@ -763,112 +763,113 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: myWhite,
-                    boxShadow: [
-                      BoxShadow(
-                        color: myBlack,
-                        blurRadius: 1,
-                        spreadRadius: 1.5,
-                        blurStyle: BlurStyle.outer,
-                      ),
-                    ],
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    color: UsedColors.myWhite,
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     color: myBlack,
+                    //     blurRadius: 1,
+                    //     spreadRadius: 1.5,
+                    //     blurStyle: BlurStyle.outer,
+                    //   ),
+                    // ],
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
                     border: Border.all(
-                      color: myGrey,
+                      color: UsedColors.myGrey,
                       width: 1.5,
                       style: BorderStyle.solid,
                     ),
                   ),
-                  height: devHeight * 0.42,
+                  height: 320,
                   width: devWidth - 60,
-                  child: Column(children: [
-                    Container(
-                      height: devHeight * 0.2,
-                      width: devWidth - 60,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(16),
-                          topLeft: Radius.circular(16),
-                        ),
-                        image: DecorationImage(
-                          image: AssetImage('images/more/coc_cover.jpg'),
-                          fit: BoxFit.cover,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: devHeight * 0.2,
+                        width: devWidth - 60,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(16),
+                            topLeft: Radius.circular(16),
+                          ),
+                          image: DecorationImage(
+                            image: AssetImage('images/more/coc_cover.jpg'),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        left: 18,
-                        top: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Text(
-                                homeOneCards2[0]['title'],
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: myGrey,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 18,
+                          top: 20,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text(
+                                  homeOneCards2[0]['title'],
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: UsedColors.myGrey,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              const Icon(
-                                Icons.circle,
-                                size: 4,
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                'Ends on date',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: myGrey,
+                                const SizedBox(
+                                  width: 8,
                                 ),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          const Text('Rs. 40 Google Play discount'),
-                          const SizedBox(
-                            height: 12,
-                          ),
-                          Text(
-                            'Terms apply',
-                            style: TextStyle(
-                              color: myGrey,
-                              fontSize: 13,
+                                const Icon(
+                                  Icons.circle,
+                                  size: 4,
+                                ),
+                                const SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  'Ends on date',
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: UsedColors.myGrey,
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          ElevatedButton(
-                            style: ButtonStyle(
-                              padding:
-                                  MaterialStateProperty.all(EdgeInsets.zero),
-                              backgroundColor: MaterialStateProperty.all(
-                                  const Color.fromARGB(0, 255, 255, 255)),
+                            const SizedBox(
+                              height: 12,
                             ),
-                            onPressed: null,
-                            child: Text(
-                              'Save offer',
+                            const Text('Rs. 40 Google Play discount'),
+                            const SizedBox(
+                              height: 12,
+                            ),
+                            Text(
+                              'Terms apply',
                               style: TextStyle(
-                                color: myGreen,
+                                color: UsedColors.myGrey,
+                                fontSize: 13,
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                    )
-                    // RaisedButton(onPressed: null)
-                  ]),
+                            const SizedBox(
+                              height: 8,
+                            ),
+                            ElevatedButton(
+                              style: ButtonStyle(
+                                padding:
+                                    MaterialStateProperty.all(EdgeInsets.zero),
+                                backgroundColor: MaterialStateProperty.all(
+                                    const Color.fromARGB(0, 255, 255, 255)),
+                              ),
+                              onPressed: null,
+                              child: Text(
+                                'Save offer',
+                                style: TextStyle(
+                                  color: UsedColors.myGreen,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
