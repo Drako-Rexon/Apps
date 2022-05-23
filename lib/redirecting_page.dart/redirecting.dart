@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:play_store_clone/components/json.dart';
-import 'package:play_store_clone/homepage.dart';
+import 'package:play_store_clone/homepage/homepage.dart';
 
 class RedirectingPage extends StatelessWidget {
   const RedirectingPage({Key? key}) : super(key: key);
