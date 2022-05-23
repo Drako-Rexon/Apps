@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 List catagoryNav = [
   "Featured",
@@ -90,3 +91,18 @@ List homeOneCards2 = [
     'size': "178 MB"
   }
 ];
+
+class ListItems {
+  static final List navIcons = [
+    Icons.gamepad,
+    Icons.apps,
+    Icons.movie_filter_outlined,
+    Icons.book_outlined,
+  ];
+  static final List navText = [
+    "Games",
+    "Apps",
+    "Movies",
+    "Books",
+  ];
+}
