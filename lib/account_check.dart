@@ -27,12 +27,15 @@ class _SignInPageState extends State<SignInPage> {
           Row(mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                'Explore  the app',
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                  color: Color(0xFFE46829),
-                  fontSize: 15,
+              Padding(
+                padding: const EdgeInsets.only(right: 14),
+                child: Text(
+                  'Explore  the app',
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    color: Color(0xFFE46829),
+                    fontSize: 15,
+                  ),
                 ),
               ),
             ],
@@ -98,7 +101,7 @@ class _SignInPageState extends State<SignInPage> {
                           type: PageTransitionType.rightToLeft));
                 },
                 child: Text(
-                  'Create account',
+                  'Create (working)',
                   style: TextStyle(
                     color: deepOrange,
                     fontSize: 14,
