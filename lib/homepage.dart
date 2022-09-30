@@ -51,7 +51,7 @@ class _HomePage2State extends State<HomePage2> {
                     return Column(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(
+                          padding: const EdgeInsets.only(
                             left: 24.0,
                             top: 10,
                             bottom: 10,
@@ -61,7 +61,7 @@ class _HomePage2State extends State<HomePage2> {
                             width: 120,
                             child: Column(
                               children: [
-                                CircleAvatar(
+                                const CircleAvatar(
                                   radius: 50,
                                   backgroundImage: AssetImage(
                                     ('assets/images/4.jpg'), //circleIcon[index]['img']
@@ -131,7 +131,7 @@ class _HomePage2State extends State<HomePage2> {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           const Text(
