@@ -11,7 +11,7 @@ class RedirectingPage extends StatelessWidget {
     return IndexedStack(
       index: activeTab,
       children: [
-        const HomePage(),
+        HomePage(),
         Center(
           child: Text(ListItems.navText[activeTab]),
         ),
