@@ -61,7 +61,7 @@ class recomendedPlants extends StatelessWidget {
                   builder: (context) => DetailScreen(),
                 ),
               );},
-            title: "Ah ah Plant",
+            title: "Temp Plant",
           ),
         ],
       ),
