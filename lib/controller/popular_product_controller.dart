@@ -11,10 +11,10 @@ class PopularProductController extends GetxService {
   Future<void> getProduxtPopularList() async {
     Response response = await popularProductRepo.getProductPopularList();
     if (response.statusCode == 200) {
-      print("Producy got");
+      // print("Producy got");
       _popularProductList = [];
       _popularProductList.addAll(Popular.fromJson(response.body).products);
-      print(_popularProductList);
+      // print(_popularProductList);
       // update();
     } else {}
   }

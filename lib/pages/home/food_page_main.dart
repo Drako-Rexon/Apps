@@ -16,7 +16,7 @@ class _FoodPageMainState extends State<FoodPageMain> {
       body: Column(
         // mainAxisAlignment: MainAxisAlignment.center,
         // crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: const [
           AppBarFood(),
           Expanded(
             child: SingleChildScrollView(

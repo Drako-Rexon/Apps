@@ -1,4 +1,3 @@
-import 'package:ecom/components/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class TopIcon extends StatelessWidget {

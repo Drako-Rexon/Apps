@@ -1,6 +1,5 @@
 import 'package:ecom/controller/popular_product_controller.dart';
 import 'package:ecom/pages/home/components/food_page_body.dart';
-import 'package:ecom/pages/recommend/recommend_food_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'helper/dependencies.dart' as depend;
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FoodPageBody(),
+      home: const FoodPageBody(),
     );
   }
 }

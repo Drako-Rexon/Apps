@@ -22,7 +22,7 @@ class PopularFood extends StatelessWidget {
             child: Container(
               height: Dimensions.popularFoodImgSize,
               width: double.maxFinite,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
                   image: AssetImage('assets/images/food0.jpg'),
@@ -65,11 +65,11 @@ class PopularFood extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  FoodMainData(text: "Chinese Slide"),
+                  const FoodMainData(text: "Chinese Slide"),
                   SizedBox(height: Dimensions.height20),
                   BigTextwidget(text: 'Introduction'),
                   SizedBox(height: Dimensions.height20),
-                  Expanded(
+                  const Expanded(
                     child: SingleChildScrollView(
                       child: ExpandableTextWidget(
                         text:
@@ -112,14 +112,14 @@ class PopularFood extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.remove,
                     color: AppColors.signColor,
                   ),
                   SizedBox(width: Dimensions.width10 / 2),
                   BigTextwidget(text: "0"),
                   SizedBox(width: Dimensions.width10 / 2),
-                  Icon(
+                  const Icon(
                     Icons.add,
                     color: AppColors.signColor,
                   )

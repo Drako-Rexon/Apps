@@ -11,7 +11,7 @@ class BigTextwidget extends StatelessWidget {
     this.overFlow = TextOverflow.ellipsis,
   }) : super(key: key);
 
-  // * This is not required field because in default case we will get black  color text
+  // * This is not required field because in default case we will get black color text
 
   // * ths is required field because we need text to use
 

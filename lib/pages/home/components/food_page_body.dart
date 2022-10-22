@@ -57,7 +57,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           ),
         ),
         // Dots here
-        new DotsIndicator(
+        // new DotsIndicator(
+        DotsIndicator(
           dotsCount: 5,
           position: _pageCurrvalue,
           decorator: DotsDecorator(
@@ -93,14 +94,15 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                 width: Dimensions.width10,
               ),
               Container(
-                child: SmallTextWidget(text: "Food pairing"),
+                color: Colors.transparent,
+                child: const SmallTextWidget(text: "Food pairing"),
               ),
             ],
           ),
         ),
         // List of foods and images
         ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 10,
           itemBuilder: (context, index) {
@@ -119,7 +121,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(Dimensions.radius20),
                       color: Colors.redAccent,
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage('assets/images/food0.jpg'),
                       ),
@@ -149,11 +151,11 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           children: [
                             BigTextwidget(
                                 text: "Nutritious fruit meal in China"),
-                            SmallTextWidget(
+                            const SmallTextWidget(
                                 text: "With chinese characteristics"),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
+                              children: const [
                                 IconAndTextWidget(
                                   sizeOfIcon: 16,
                                   color: AppColors.textColor,
@@ -192,7 +194,8 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   }
 
   Widget _pageItem(int index) {
-    Matrix4 matrix = new Matrix4.identity();
+    // Matrix4 matrix = new Matrix4.identity();
+    Matrix4 matrix = Matrix4.identity();
 
     if (index == _pageCurrvalue.floor()) {
       var currentScale = 1 - (_pageCurrvalue - index) * (1 - _scaleFactor);
@@ -234,7 +237,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
             ),
           ),
-          SmallCardStack(),
+          const SmallCardStack(),
         ],
       ),
     );

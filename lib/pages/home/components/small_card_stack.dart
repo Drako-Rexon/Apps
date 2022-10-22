@@ -19,7 +19,7 @@ class SmallCardStack extends StatelessWidget {
           vertical: Dimensions.height30,
         ),
         decoration: BoxDecoration(
-          boxShadow: [
+          boxShadow: const  [
             BoxShadow(
               offset: Offset(5, 5),
               blurRadius: 5,
@@ -44,7 +44,7 @@ class SmallCardStack extends StatelessWidget {
             left: Dimensions.height20,
             bottom: Dimensions.height20,
           ),
-          child: FoodMainData(text: "chinese slide",),
+          child: const FoodMainData(text: "chinese slide",),
         ),
       ),
     );

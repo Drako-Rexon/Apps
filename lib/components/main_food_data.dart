@@ -29,21 +29,17 @@ class FoodMainData extends StatelessWidget {
           children: [
             Wrap(
               children: List.generate(5, (index) {
-                return Icon(
+                return const Icon(
                   Icons.star,
                   color: AppColors.mainColor,
                   size: 18,
                 );
               }),
             ),
-            SizedBox(
-              width: 5,
-            ),
-            SmallTextWidget(text: 'rating'),
-            SizedBox(
-              width: 5,
-            ),
-            SmallTextWidget(text: '123 comments'),
+            const SizedBox(width: 5),
+            const SmallTextWidget(text: 'rating'),
+            const SizedBox(width: 5),
+            const SmallTextWidget(text: '123 comments'),
           ],
         ),
         SizedBox(
@@ -51,7 +47,7 @@ class FoodMainData extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: const [
             IconAndTextWidget(
               color: AppColors.textColor,
               title: 'Normal',

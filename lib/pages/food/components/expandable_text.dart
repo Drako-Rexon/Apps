@@ -4,7 +4,7 @@ import 'package:ecom/components/small_text.dart';
 import 'package:flutter/material.dart';
 
 class ExpandableTextWidget extends StatefulWidget {
-  ExpandableTextWidget({
+  const ExpandableTextWidget({
     Key? key,
     required this.text,
   }) : super(key: key);

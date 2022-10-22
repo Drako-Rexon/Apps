@@ -24,7 +24,7 @@ class Popular {
     if (json['products'] != null) {
       _products = <ProductsModel>[];
       json['products'].forEach((v) {
-        _products.add(new ProductsModel.fromJson(v));
+        _products.add(ProductsModel.fromJson(v));
       });
     }
   }

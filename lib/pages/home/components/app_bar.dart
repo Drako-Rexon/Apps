@@ -32,7 +32,7 @@ class AppBarFood extends StatelessWidget {
                 ),
                 // ! TODO: This is for only UI we need to replace it with dropdown menu for changing address
                 Row(
-                  children: [
+                  children: const [
                     SmallTextWidget(
                       text: 'New Delhi',
                       color: Colors.black54,
